@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <header id="header">
+
+        <% include includes/header.ejs %>
+
+    </header>
+
+    <% if (typeof slider == 'object' && slider.movies.length) { %>
+
+    <div class="favorites-slider">
+        <div class="container">
+            <div id="favorites" class="slider">
+                <i class="buttons prev icon-sliderLeft"></i>
+                <div class="viewport">
+                    <ul class="overview">
+
+                        <% slider.movies.forEach(function (movie) { %>
+
+                        <li>
+                            <a href="<%- movie.url %>">
+                                <span class="icon-noimage">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                </span>
+                                <i class="fa ico-play"></i>
+                                <div class="film-name"><%- movie.title_ru %></div>
+                            </a>
+                        </li>
+
+                        <% }); %>
+
+                    </ul>
+                </div>
+                <i class="buttons next icon-sliderRight"></i>
+            </div>
+        </div>
+    </div>
+
+    <% } %>
+
+    <div id="main" class="showfull">
+
+        <div class="top-menu">
+            <div class="container">
+                <ul>
+                    <li class="active open">
+                        <a href="<%- movie.url %>">Описание</a>
+                    </li>
+                    <li class="active not-click">
+                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                    </li>
+                    <li class="active not-click">
+                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                    </li>
+                    <li class="active not-click">
+                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлеры</a>
+                    </li>
+                    <li class="active not-click">
+                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-main">
+
+            <aside id="aside">
+
+                <% include includes/left.ejs %>
+
+            </aside>
+
+            <div class="content" id="content">
+
+                <div class="line-block">
+                    <div id='cinemapress-content'>
+                        <div id="breadcrumb">
+                            <a href="<%- page.protocol %><%- page.domain %>">
+                                Главная
+                            </a>
+                            <span class="separetor">/</span>
+                            <%- movie.genre_url %>
+                            <span class="separetor">/</span>
+                            <span class="active"><%- movie.title_ru %></span>
+                        </div>
+                        <article class="fullstory">
+                            <div class="short min">
+                                <span>
+                                    <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                </span>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">
+                                    Смотреть онлайн
+                                </a>
+                                <ul>
+                                    <li class="download">
+                                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="icon-download">Скачать</a>
+                                    </li>
+                                </ul>
+
+                                <div class="trailer-wrap">
+                                    <span class="trailer-title">Трейлер:</span>
+                                    <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
+                                        <div class="trailer-img icon-playSlim"></div>
+                                        <div class="trailer-video"></div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="full min">
+                                <div class="name-block">
+                                    <h1 class="name"><%- movie.title_ru %> смотреть онлайн</h1>
+                                    <div class="origin-name"><strong><%- movie.title_en %></strong>
+                                    </div>
+                                </div>
+                                <div class="top-date">
+                                    <div class="block-date">
+                                        <span class="date"><span><%- movie.premiere %></span></span>
+                                    </div>
+                                </div>
+
+                                <% if (movie.description) { %>
+                                <div class="information">
+                                    <%- movie.description %>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.directors_url) { %>
+                                <div class="item category">
+                                    <span class="label">Режиссер:</span>
+                                    <span class="item-content">
+                                        <%- movie.directors_url %>
+                                    </span>
+                                </div>
+                                <% } %>
+                                <% if (movie.actors_url) { %>
+                                <div class="item category">
+                                    <span class="label">В ролях:</span>
+                                    <span class="item-content">
+                                        <%- movie.actors_url %>
+                                    </span>
+                                </div>
+                                <% } %>
+                                <% if (movie.year_url) { %>
+                                <div class="item category">
+                                    <span class="label">Год:</span>
+                                    <span class="item-content">
+                                        <%- movie.year_url %>
+                                    </span>
+                                </div>
+                                <% } %>
+                                <% if (movie.genres_url) { %>
+                                <div class="item category">
+                                    <span class="label">Жанр:</span>
+                                    <span class="item-content">
+                                        <%- movie.genres_url %>
+                                    </span>
+                                </div>
+                                <% } %>
+                                <% if (movie.countries_url) { %>
+                                <div class="item category">
+                                    <span class="label">Страна:</span>
+                                    <span class="item-content">
+                                        <%- movie.countries_url %>
+                                    </span>
+                                </div>
+                                <% } %>
+
+                            </div>
+
+                            <div class="full-panel">
+                                <div class="left">
+                                    <header class="helpRating">
+                                        Рейтинг
+                                    </header>
+                                    <footer>
+                                        <span class="kinopoisk btn-tooltip icon-kinopoisk">
+                                            <strong><%- movie.kp_rating/10 %></strong>
+                                            <br>
+                                            <strong><%- movie.kp_vote %></strong>
+                                        </span>
+                                        <span class="imdb btn-tooltip icon-imdb">
+                                            <strong><%- movie.imdb_rating/10 %></strong>
+                                            <br>
+                                            <strong><%- movie.imdb_vote %></strong>
+                                        </span>
+                                    </footer>
+                                </div>
+                                <div class="center">
+                                    <header>Итоговый рейтинг</header>
+                                    <div id="slider-range-min">
+                                        <span style="width: <%- movie.rating %>%;" class="percent-p" data-percent-p="<%- movie.rating %>"></span>
+                                        <span class="pic " style="left: <%- movie.rating %>%;"></span>
+                                        <span style="width: <%- (100-movie.rating) %>%;" class="percent-n" data-percent-n="<%- (100-movie.rating) %>"></span>
+                                    </div>
+                                    <footer>
+                                        <span class="green"><%- movie.rating %>%</span>
+                                        <span> </span>
+                                        <span class="red"><%- (100-movie.rating) %>%</span>
+                                    </footer>
+                                </div>
+                                <div class="right rating">
+                                    <%- movie.vote %> голосов
+                                </div>
+                            </div>
+                        </article>
+
+                        <div class="player-main-block">
+                            <h2>Смотреть онлайн</h2>
+                            <div class="player-item">
+                                <header>
+                                    <div class="watchLaterBlock" style="display: none;">
+                                        <span class="continue tooltip m-button" id="watchLater" title="Когда будет время, просто нажмете вверху экрана кнопку «Продолжить»">Досмотреть позже</span>
+                                    </div>
+                                </header>
+                                <div class="players">
+
+                                    <%- page.player %>
+
+                                </div>
+                                <div class="reports-subscribe" style="padding: 20px 0;">
+                                    <span class="download">
+                                        <a class="icon-download" href="<%- movie.url %>/<%- page.urls.movies.download %>">
+                                            Скачать
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                        <% if (movies[type].length) { %>
+
+                        <% movies[type].forEach(function (category) { %>
+
+                        <div class="careers-actor slider slider-main">
+                            <div class="head-title clearfix">
+                                <div class="subtitle">
+                                    <%- category.name %>
+                                </div>
+                                <div class="slider-navigation">
+                                    <span class="buttons prev row-left icon-arowLeft"><i class="fa"></i></span>
+                                    <span class="buttons next row-right icon-arowRight"><i class="fa"></i></span>
+                                </div>
+                            </div>
+                            <div class="viewport">
+                                <ul class="slider-wrap overview">
+
+                                    <% if (category.movies.length) { %>
+
+                                    <% category.movies.forEach(function (movie) { %>
+
+                                    <li class="slider-item">
+                                        <a href="<%- movie.url %>">
+                                            <span class="slider-img ">
+                                                <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                            </span>
+                                            <div class="film-name"><%- movie.title_ru %></div>
+                                        </a>
+                                    </li>
+
+                                    <% }); %>
+
+                                    <% } %>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <% }); %>
+
+                        <% } %>
+
+                        <% } } } %>
+
+                        <% if (page.comments) { %>
+
+                        <div class="cr-block com">
+                            <h2 class="cr-title">Отзывы на фильм <%- movie.title_ru %></h2>
+
+                            <div id="commentstab" class="tab-block open">
+
+                                <%- page.comments %>
+
+                            </div>
+
+                        </div>
+
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <% if (page.seo) { %>
+
+        <div class="container user-playlists-slider main-playlist">
+            <div class="head-title">
+                <div class="subtitle"><%- page.title %></div>
+            </div>
+            <div class="viewport">
+                <%- page.seo %>
+            </div>
+        </div>
+
+        <% } %>
+
+        <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">
+            <div class="viewport">
+                <div>Вы надавно смотрели:</div>
+                <div id="recentlyViewed"></div>
+            </div>
+        </div>
+
+        <div class="page-buffer"></div>
+
+        <div class="page-footer clearfix">
+            <footer id="footer">
+
+                <% include includes/footer.ejs %>
+
+            </footer>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

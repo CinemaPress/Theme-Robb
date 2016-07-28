@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <header id="header">
+
+        <% include includes/header.ejs %>
+
+    </header>
+
+    <% if (typeof slider == 'object' && slider.movies.length) { %>
+
+    <div class="favorites-slider">
+        <div class="container">
+            <div id="favorites" class="slider">
+                <i class="buttons prev icon-sliderLeft"></i>
+                <div class="viewport">
+                    <ul class="overview">
+
+                        <% slider.movies.forEach(function (movie) { %>
+
+                        <li>
+                            <a href="<%- movie.url %>">
+                                <span class="icon-noimage">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                </span>
+                                <i class="fa ico-play"></i>
+                                <div class="film-name"><%- movie.title_ru %></div>
+                            </a>
+                        </li>
+
+                        <% }); %>
+
+                    </ul>
+                </div>
+                <i class="buttons next icon-sliderRight"></i>
+            </div>
+        </div>
+    </div>
+
+    <% } %>
+
+    <% if (page.social) { %>
+
+    <div class="container social-counters">
+        <ul class="social-wrap">
+            <% if (page.social.vk) { %>
+                <li class="vk-count" data-type="vk">
+                    <a href="<%- page.social.vk %>" target="_blank">
+                        <span class="vk icon-vk-m">Вконтакте</span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (page.social.facebook) { %>
+                <li class="fb-count" data-type="fb">
+                    <a href="<%- page.social.facebook %>" target="_blank">
+                        <span class="fb icon-fb-m">Facebook</span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (page.social.twitter) { %>
+                <li class="tw-count" data-type="tw">
+                    <a href="<%- page.social.twitter %>" target="_blank">
+                        <span class="tw icon-tw-m">Twitter</span>
+                    </a>
+                </li>
+            <% } %>
+            <% if (page.social.gplus) { %>
+                <li class="ok-count" data-type="ok">
+                    <a href="<%- page.social.gplus %>" target="_blank">
+                        <span class="ok icon-gp-m">G+</span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <% } %>
+
+    <div id="main" class="cat">
+
+        <div class="container-main">
+
+            <div class="panel-view">
+                <div class="grid neutral icon-grid" id="OpenGrid"><i class="fa"></i></div>
+                <div class="line neutral icon-list" id="OpenLine"><i class="fa"></i></div>
+            </div>
+
+            <aside id="aside">
+
+                <% include includes/left.ejs %>
+
+            </aside>
+
+            <section class="content">
+
+                <div class="line-block">
+
+                    <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                    <% if (movies[type].length) { %>
+
+                    <% movies[type].forEach(function (category) { %>
+
+                    <div class="head-title">
+
+                        <h2 class="subtitle">
+                            <%- category.name %>
+                        </h2>
+
+                    </div>
+
+                    <div class='cinemapress-content'>
+
+                        <% if (category.movies.length) { %>
+
+                        <% category.movies.forEach(function (movie) { %>
+
+                        <article class="shortstory line">
+                            <div class="short">
+                                <a href="<%- movie.url %>">
+                                    <div class="like-count-wrap">
+                                        <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                        <div class="like">
+                                            <div class="count green"><%- movie.rating %>%</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="<%- movie.url %>">
+                                    <h3 class="name"><%- movie.title_ru %></h3>
+                                    <div class="origin-name"><%- movie.title_en %></div>
+                                </a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch">
+                                    Смотреть онлайн
+                                </a>
+                            </div>
+
+                            <div class="full">
+
+                                <div class="top-date">
+                                    <div class="block-date">
+                                        <span class="date"><span><%- movie.premiere %></span></span>
+                                    </div>
+                                </div>
+                                <div class="name-block">
+                                    <h3 class="name">
+                                        <a href="<%- movie.url %>"><%- movie.title_ru %></a>
+                                    </h3>
+                                    <div class="origin-name"><%- movie.title_en %></div>
+                                </div>
+
+                                <% if (movie.genres_url) { %>
+                                <div class="item category">
+                                    <span class="lable">Жанр:</span>
+									<span class="added-info">
+                                        <%- movie.genres_url %>
+									</span>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.year_url) { %>
+                                <div class="item category">
+                                    <span class="lable">Год:</span>
+									<span class="added-info">
+                                        <%- movie.year_url %>
+									</span>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.countries_url) { %>
+                                <div class="item category">
+                                    <span class="lable">Страна:</span>
+									<span class="added-info">
+                                        <%- movie.countries_url %>
+									</span>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.directors_url) { %>
+                                <div class="item category">
+                                    <span class="lable">Режиссер:</span>
+									<span class="added-info">
+                                        <%- movie.directors_url %>
+									</span>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.actors_url) { %>
+                                <div class="item category">
+                                    <span class="lable">В ролях:</span>
+									<span class="added-info">
+                                        <%- movie.actors_url %>
+									</span>
+                                </div>
+                                <% } %>
+
+                                <% if (movie.description) { %>
+                                <div class="description">
+                                    <%- movie.description.substr(0, 200) %>...
+                                </div>
+                                <% } %>
+
+                                <div class="close-wrap icon-close"></div>
+
+                            </div>
+                        </article>
+
+                        <% }); %>
+
+                        <% } %>
+
+                    </div>
+
+                    <% }); %>
+
+                    <% } %>
+
+                    <% } } } %>
+
+                </div>
+            </section>
+
+        </div>
+
+        <% if (page.seo) { %>
+
+        <div class="container user-playlists-slider main-playlist">
+            <div class="head-title">
+                <h1 class="subtitle"><%- page.title %></h1>
+            </div>
+            <div class="viewport">
+                <%- page.seo %>
+            </div>
+        </div>
+
+        <% } %>
+
+        <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">
+            <div class="viewport">
+                <div>Вы надавно смотрели:</div>
+                <div id="recentlyViewed"></div>
+            </div>
+        </div>
+
+        <div class="page-buffer"></div>
+
+        <div class="page-footer clearfix">
+            <footer id="footer">
+
+                <% include includes/footer.ejs %>
+
+            </footer>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

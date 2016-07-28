@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <header id="header">
+
+        <% include includes/header.ejs %>
+
+    </header>
+
+    <% if (typeof slider == 'object' && slider.movies.length) { %>
+
+    <div class="favorites-slider">
+        <div class="container">
+            <div id="favorites" class="slider">
+                <i class="buttons prev icon-sliderLeft"></i>
+                <div class="viewport">
+                    <ul class="overview">
+
+                        <% slider.movies.forEach(function (movie) { %>
+
+                        <li>
+                            <a href="<%- movie.url %>">
+                                <span class="icon-noimage">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                </span>
+                                <i class="fa ico-play"></i>
+                                <div class="film-name"><%- movie.title_ru %></div>
+                            </a>
+                        </li>
+
+                        <% }); %>
+
+                    </ul>
+                </div>
+                <i class="buttons next icon-sliderRight"></i>
+            </div>
+        </div>
+    </div>
+
+    <% } %>
+
+    <% if (page.social) { %>
+
+    <div class="container social-counters">
+        <ul class="social-wrap">
+            <% if (page.social.vk) { %>
+            <li class="vk-count" data-type="vk">
+                <a href="<%- page.social.vk %>" target="_blank">
+                    <span class="vk icon-vk-m">Вконтакте</span>
+                </a>
+            </li>
+            <% } %>
+            <% if (page.social.facebook) { %>
+            <li class="fb-count" data-type="fb">
+                <a href="<%- page.social.facebook %>" target="_blank">
+                    <span class="fb icon-fb-m">Facebook</span>
+                </a>
+            </li>
+            <% } %>
+            <% if (page.social.twitter) { %>
+            <li class="tw-count" data-type="tw">
+                <a href="<%- page.social.twitter %>" target="_blank">
+                    <span class="tw icon-tw-m">Twitter</span>
+                </a>
+            </li>
+            <% } %>
+            <% if (page.social.gplus) { %>
+            <li class="ok-count" data-type="ok">
+                <a href="<%- page.social.gplus %>" target="_blank">
+                    <span class="ok icon-gp-m">G+</span>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <% } %>
+
+    <div id="main" class="cat">
+
+        <div class="container-main">
+
+            <aside id="aside">
+
+                <% include includes/left.ejs %>
+
+            </aside>
+
+            <div class="content">
+
+                <div id="breadcrumb">
+                    <a href="<%- page.protocol %><%- page.domain %>">
+                        Главная
+                    </a>
+                    <span class="separetor">/</span>
+                    <span class="active"><%- page.title %></span>
+                </div>
+
+                <div class="head-title">
+
+                    <h1 class="subtitle">
+                        <%- page.title %>
+                    </h1>
+
+                </div>
+
+                <div class="line-block">
+                    <div class='cinemapress-content'>
+
+                        <% if (typeof categories == 'object' && categories.length) { %>
+
+                        <% categories.forEach(function (category) { %>
+
+                        <article class="shortstory grid">
+                            <div class="short">
+                                <a href="<%- category.url %>">
+                                    <div class="like-count-wrap">
+                                        <img src="<% if (category.image) { %><%- category.image %><% } else { %>https://st.kp.yandex.net/images/kadr/sm_2136182.jpg<% } %>" class="poster" style="height: 156px;" alt="<%- category.name %>">
+                                    </div>
+                                </a>
+                                <a href="<%- category.url %>">
+                                    <h2 class="name"><%- category.name %></h2>
+                                </a>
+                            </div>
+                        </article>
+
+                        <% }); %>
+
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <% if (page.seo) { %>
+
+        <div class="container user-playlists-slider main-playlist">
+            <div class="head-title">
+                <div class="subtitle"><%- page.title %></div>
+            </div>
+            <div class="viewport">
+                <%- page.seo %>
+            </div>
+        </div>
+
+        <% } %>
+
+        <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">
+            <div class="viewport">
+                <div>Вы надавно смотрели:</div>
+                <div id="recentlyViewed"></div>
+            </div>
+        </div>
+
+        <div class="page-buffer"></div>
+
+        <div class="page-footer clearfix">
+            <footer id="footer">
+
+                <% include includes/footer.ejs %>
+
+            </footer>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
