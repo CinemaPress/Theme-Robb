@@ -1,7 +1,10 @@
 # Theme Robb
-:art: Шаблон «Robb» для CinemaPress ACMS
 
 ![Шаблон «Robb» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Robb/master/screenshot.png "Шаблон «Robb» для CinemaPress ACMS")
+
+:art: Шаблон «Robb» для CinemaPress ACMS
+
+- <a href="http://Robb.CinemaPress.org/" target="_blank">Robb.CinemaPress.org</a>
 
 ## Установка
 1. [Скачать архив](https://github.com/CinemaPress/Theme-Robb/archive/master.zip)
