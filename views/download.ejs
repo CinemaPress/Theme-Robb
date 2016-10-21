@@ -97,6 +97,18 @@
                             <h1 id="play-descr" class="title-page">
                                 Скачать <a href="<%- movie.url %>"><%- movie.title_ru %></a>
                             </h1>
+                            <div class="episodesListBlock" style="display: none; margin-bottom: 20px;">
+                                <h3><%- movie.title %> новые серии</h3>
+                                <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                            </div>
+                            <header>
+                                <div class="hidden-block">
+                                    <span class="save-time">
+                                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Смотреть онлайн</a>
+                                    </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </header>
                             <div class="clearfix"></div>
                             <div class="players">
                                 <div id="MT_overroll">
@@ -106,7 +118,6 @@
 
                                     </div>
                                 </div>
-
                             </div>
                             <% if (page.seo) { %>
                             <div style="text-align: justify; margin: 20px auto;">

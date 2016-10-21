@@ -97,6 +97,10 @@
                             <h1 id="play-descr" class="title-page">
                                 Онлайн <a href="<%- movie.url %>"><%- movie.title_ru %></a>
                             </h1>
+                            <div class="episodesListBlock" style="display: none; margin-bottom: 20px;">
+                                <h3><%- movie.title %> новые серии</h3>
+                                <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                            </div>
                             <header>
                                 <div class="hidden-block">
                                     <div class="watchLaterBlock" style="display: none;">
@@ -117,7 +121,6 @@
 
                                     </div>
                                 </div>
-
                             </div>
                             <% if (page.seo) { %>
                             <div style="text-align: justify; margin: 20px auto;">
