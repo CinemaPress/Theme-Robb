@@ -29,10 +29,10 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
-                                <div class="film-name"><%- movie.title_ru %></div>
+                                <div class="film-name"><%- movie.title %></div>
                             </a>
                         </li>
 
@@ -90,12 +90,12 @@
                             <span class="separetor">/</span>
                             <%- movie.genre_url %>
                             <span class="separetor">/</span>
-                            <span class="active"><%- movie.title_ru %></span>
+                            <span class="active"><%- movie.title %></span>
                         </div>
                         <article class="fullstory">
                             <div class="short min">
                                 <span>
-                                    <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                    <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title %>">
                                 </span>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">
                                     Смотреть онлайн
@@ -117,7 +117,7 @@
                             </div>
                             <div class="full min">
                                 <div class="name-block">
-                                    <h1 class="name"><%- movie.title_ru %> смотреть онлайн</h1>
+                                    <h1 class="name"><%- movie.title %> смотреть онлайн</h1>
                                     <div class="origin-name"><strong><%- movie.title_en %></strong>
                                     </div>
                                 </div>
@@ -267,9 +267,9 @@
                                     <li class="slider-item">
                                         <a href="<%- movie.url %>">
                                             <span class="slider-img ">
-                                                <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                                <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
                                             </span>
-                                            <div class="film-name"><%- movie.title_ru %></div>
+                                            <div class="film-name"><%- movie.title %></div>
                                         </a>
                                     </li>
 
@@ -290,7 +290,7 @@
                         <% if (page.comments) { %>
 
                         <div class="cr-block com">
-                            <h2 class="cr-title">Отзывы на фильм <%- movie.title_ru %></h2>
+                            <h2 class="cr-title">Отзывы на фильм <%- movie.title %></h2>
 
                             <div id="commentstab" class="tab-block open">
 

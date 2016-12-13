@@ -29,10 +29,10 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title_ru %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
-                                <div class="film-name"><%- movie.title_ru %></div>
+                                <div class="film-name"><%- movie.title %></div>
                             </a>
                         </li>
 
@@ -77,7 +77,7 @@
                     <div id='cinemapress-content'>
                         <div class="play">
                             <h2 class="hidden">
-                                <%- movie.title_ru %> / <%- movie.title_en %> (<%- movie.year %>)
+                                <%- movie.title %> / <%- movie.title_en %> (<%- movie.year %>)
                             </h2>
                             <div id="breadcrumb">
                                 <a href="<%- page.protocol %><%- page.domain %>">
@@ -87,7 +87,7 @@
                                 <%- movie.genre_url %>
                                 <span class="separetor">/</span>
                                 <a href="<%- movie.url %>">
-                                    <%- movie.title_ru %>
+                                    <%- movie.title %>
                                 </a>
                                 <span class="separetor">/</span>
                                 <span class="active">
