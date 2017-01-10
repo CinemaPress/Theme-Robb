@@ -84,6 +84,14 @@
 
     <% } %>
 
+    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+    <div class="container user-playlists-slider main-playlist">
+        <div class="viewport" style="text-align: center;">
+            <%- page.adv.top %>
+        </div>
+    </div>
+    <% } %>
+
     <div id="main" class="cat">
 
         <div class="container-main">
@@ -151,7 +159,7 @@
                                 </div>
                                 <div class="name-block">
                                     <h3 class="name">
-                                        <a href="<%- movie.url %>"><%- movie.title %></a>
+                                        <a href="<%- movie.url %>"><%- movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></a>
                                     </h3>
                                     <div class="origin-name"><%- movie.title_en %></div>
                                 </div>
@@ -228,6 +236,14 @@
             </section>
 
         </div>
+
+        <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+        <div class="container user-playlists-slider main-playlist">
+            <div class="viewport" style="text-align: center;">
+                <%- page.adv.bottom %>
+            </div>
+        </div>
+        <% } %>
 
         <% if (page.seo) { %>
 

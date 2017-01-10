@@ -72,7 +72,7 @@
         </div>
 
         <div class="container-main">
-            <section class="content" id="content">
+            <div class="content" id="content">
                 <div class="line-block">
                     <div id='cinemapress-content'>
                         <div class="play">
@@ -94,6 +94,13 @@
                                     Серия онлайн
                                 </span>
                             </div>
+
+                            <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                            <div style="text-align: center; margin: 10px auto;">
+                                <%- page.adv.over %>
+                            </div>
+                            <% } %>
+
                             <h1 id="play-descr" class="title-page">
                                 <%- page.title %>
                             </h1>
@@ -122,6 +129,13 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                            <div style="text-align: center; margin: 10px auto;">
+                                <%- page.adv.under %>
+                            </div>
+                            <% } %>
+
                             <% if (page.seo) { %>
                             <div style="text-align: justify; margin: 20px auto;">
                                 <%- page.seo %>
@@ -130,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
         <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none; background-color: transparent;">

@@ -47,6 +47,14 @@
 
     <% } %>
 
+    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+    <div class="container user-playlists-slider main-playlist">
+        <div class="viewport" style="text-align: center;">
+            <%- page.adv.top %>
+        </div>
+    </div>
+    <% } %>
+
     <div id="main" class="showfull">
 
         <div class="top-menu">
@@ -218,6 +226,12 @@
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                         </div>
 
+                        <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                        <div style="text-align: center; margin: 10px auto;">
+                            <%- page.adv.over %>
+                        </div>
+                        <% } %>
+
                         <div class="player-main-block">
                             <h2>Смотреть онлайн</h2>
                             <div class="player-item">
@@ -240,6 +254,12 @@
                                 </div>
                             </div>
                         </div>
+
+                        <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                        <div style="text-align: center; margin: 10px auto;">
+                            <%- page.adv.under %>
+                        </div>
+                        <% } %>
 
                         <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
 
@@ -307,6 +327,14 @@
             </div>
 
         </div>
+
+        <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+        <div class="container user-playlists-slider main-playlist">
+            <div class="viewport" style="text-align: center;">
+                <%- page.adv.bottom %>
+            </div>
+        </div>
+        <% } %>
 
         <% if (page.seo) { %>
 

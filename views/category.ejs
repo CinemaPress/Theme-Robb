@@ -84,6 +84,14 @@
 
     <% } %>
 
+    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+    <div class="container user-playlists-slider main-playlist">
+        <div class="viewport" style="text-align: center;">
+            <%- page.adv.top %>
+        </div>
+    </div>
+    <% } %>
+
     <div id="main" class="cat">
 
         <div class="container-main">
@@ -267,6 +275,14 @@
             </div>
 
         </div>
+
+        <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+        <div class="container user-playlists-slider main-playlist">
+            <div class="viewport" style="text-align: center;">
+                <%- page.adv.bottom %>
+            </div>
+        </div>
+        <% } %>
 
         <% if (page.seo) { %>
 
