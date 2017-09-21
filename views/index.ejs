@@ -15,7 +15,7 @@
 
     </header>
 
-    <% if (typeof slider == 'object' && slider.movies.length) { %>
+    <% if (typeof slider === 'object' && slider.length) { %>
 
     <div class="favorites-slider">
         <div class="container">
@@ -24,7 +24,7 @@
                 <div class="viewport">
                     <ul class="overview">
 
-                        <% slider.movies.forEach(function (movie) { %>
+                        <% slider.forEach(function (movie) { %>
 
                         <li>
                             <a href="<%- movie.url %>">
@@ -79,12 +79,26 @@
                     </a>
                 </li>
             <% } %>
+            <% if (page.social.youtube) { %>
+            <li class="ok-count" data-type="ok">
+                <a href="<%- page.social.youtube %>" target="_blank">
+                    <span class="yt icon-play">YouTube</span>
+                </a>
+            </li>
+            <% } %>
+            <% if (page.social.instagram) { %>
+            <li class="ok-count" data-type="ok">
+                <a href="<%- page.social.instagram %>" target="_blank">
+                    <span class="ig icon-ig-m">Instagram</span>
+                </a>
+            </li>
+            <% } %>
         </ul>
     </div>
 
     <% } %>
 
-    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+    <% if (typeof page.adv === 'object' && page.adv.top) { %>
     <div class="container user-playlists-slider main-playlist" style="margin-top: 30px; padding: 10px;">
         <div class="viewport" style="text-align: center;">
             <%- page.adv.top %>
@@ -111,11 +125,11 @@
 
                 <div class="line-block">
 
-                    <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+                    <% if (typeof index === 'object') { for (var type in index) { if (index.hasOwnProperty(type)) { %>
 
-                    <% if (movies[type].length) { %>
+                    <% if (index[type].length) { %>
 
-                    <% movies[type].forEach(function (category) { %>
+                    <% index[type].forEach(function (category) { %>
 
                     <div class="head-title">
 
@@ -125,7 +139,7 @@
 
                     </div>
 
-                    <div class='cinemapress-content'>
+                    <div class="cinemapress-content-main">
 
                         <% if (category.movies.length) { %>
 
@@ -136,9 +150,11 @@
                                 <a href="<%- movie.url %>">
                                     <div class="like-count-wrap">
                                         <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title %>">
+                                        <% if (movie.quality) { %>
                                         <div class="like">
-                                            <div class="count green"><%- movie.rating %>%</div>
+                                            <div class="count green"><%- movie.quality %></div>
                                         </div>
+                                        <% } %>
                                     </div>
                                 </a>
                                 <a href="<%- movie.url %>">
@@ -152,11 +168,13 @@
 
                             <div class="full">
 
+                                <% if (movie.premiere) { %>
                                 <div class="top-date">
                                     <div class="block-date">
                                         <span class="date"><span><%- movie.premiere %></span></span>
                                     </div>
                                 </div>
+                                <% } %>
                                 <div class="name-block">
                                     <h3 class="name">
                                         <a href="<%- movie.url %>"><%- movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></a>
@@ -234,9 +252,14 @@
 
                 </div>
 
+                <% if (typeof page.pagination === 'object') { %>
                 <div class="navigation">
+                    <% if (page.pagination.first) { %>
+                    <a href="<%- page.pagination.first.link %>" rel="nofollow"><%- page.pagination.first.number %></a>
+                    <span class="nav_ext">...</span>
+                    <% } %>
                     <% if (page.pagination.prev.length) { %>
-                    <% page.pagination.prev.slice(-4).forEach(function (prev) { %>
+                    <% page.pagination.prev.forEach(function (prev) { %>
                     <a href="<%- prev.link %>" rel="nofollow">
                         <%- prev.number %>
                     </a>
@@ -246,23 +269,24 @@
                     <span><%- page.pagination.current %></span>
                     <% if (page.pagination.next.length) { %>
                     <span class="nav_ext">...</span>
-                    <% page.pagination.next.slice(0,4).forEach(function (next) { %>
+                    <% page.pagination.next.forEach(function (next) { %>
                     <a href="<%- next.link %>" rel="nofollow">
                         <%- next.number %>
                     </a>
                     <% }); %>
                     <% } %>
-                    <% if (page.pagination.all) { %>
+                    <% if (page.pagination.last) { %>
                     <span class="nav_ext">...</span>
-                    <a href="<%- page.pagination.all.link %>" rel="nofollow"><%- page.pagination.all.number %></a>
+                    <a href="<%- page.pagination.last.link %>" rel="nofollow"><%- page.pagination.last.number %></a>
                     <% } %>
                 </div>
+                <% } %>
 
             </section>
 
         </div>
 
-        <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+        <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
         <div class="container user-playlists-slider main-playlist" style="padding: 10px;">
             <div class="viewport" style="text-align: center;">
                 <%- page.adv.bottom %>

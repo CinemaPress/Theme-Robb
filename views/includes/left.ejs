@@ -1,13 +1,13 @@
 <div class="aside-wrap">
 
-    <% if (typeof top == 'object' && top.movies.length) { %>
+    <% if (typeof top === 'object' && top.length) { %>
 
     <div class="aside-block">
         <div class="aside-title">
-            <%- top.name %>
+            Топ
         </div>
 
-        <% [top.movies.shift()].forEach(function (movie) { %>
+        <% [top.shift()].forEach(function (movie) { %>
 
         <div id="now-playing" class="slider slider-main">
             <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="Смотреть онлайн <%- movie.title %>"></a>
@@ -18,7 +18,7 @@
     </div>
     <div class="now-playing-list main-page">
 
-        <% top.movies.forEach(function (movie) { %>
+        <% top.forEach(function (movie) { %>
 
         <div class="list-item">
             <a href="<%- movie.url %>" class="name-movie">
@@ -40,7 +40,7 @@
     </div>
     <div class="now-playing-list main-page">
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=kinopoisk-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=kinopoisk-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные фильмы
                 </span>
@@ -50,7 +50,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=kinopoisk-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=kinopoisk-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные мультфильмы
                 </span>
@@ -60,7 +60,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=kinopoisk-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=kinopoisk-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные сериалы
                 </span>
@@ -70,7 +70,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=kinopoisk-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=kinopoisk-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные аниме
                 </span>
@@ -80,7 +80,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=kinopoisk-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=kinopoisk-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ фильмы
                 </span>
@@ -90,7 +90,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=kinopoisk-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=kinopoisk-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ мультфильмы
                 </span>
@@ -100,7 +100,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=kinopoisk-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=kinopoisk-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ сериалы
                 </span>
@@ -110,7 +110,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=kinopoisk-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=kinopoisk-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ аниме
                 </span>
@@ -121,7 +121,7 @@
         </div>
 
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=imdb-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=imdb-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные фильмы
                 </span>
@@ -131,7 +131,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=imdb-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=imdb-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные мультфильмы
                 </span>
@@ -141,7 +141,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=imdb-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=imdb-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные сериалы
                 </span>
@@ -151,7 +151,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=imdb-vote-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=imdb-vote-up" class="name-movie">
                 <span class="name-rus">
                     Популярные аниме
                 </span>
@@ -161,7 +161,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=imdb-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=imdb-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ фильмы
                 </span>
@@ -171,7 +171,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=imdb-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>?sort=imdb-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ мультфильмы
                 </span>
@@ -181,7 +181,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=imdb-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>?sort=imdb-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ сериалы
                 </span>
@@ -191,7 +191,7 @@
             </a>
         </div>
         <div class="list-item">
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=imdb-rating-up" class="name-movie">
+            <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>?sort=imdb-rating-up" class="name-movie">
                 <span class="name-rus">
                     Топ аниме
                 </span>
@@ -201,18 +201,19 @@
             </a>
         </div>
     </div>
+    <div style="clear: both"></div>
 
-    <% if (typeof soon == 'object' && soon.movies.length) { %>
+    <% if (typeof soon === 'object' && soon.length) { %>
 
     <div class="aside-block">
-        <div class="aside-title"><%- soon.name %>
+        <div class="aside-title">Скоро выйдет
         </div>
         <div id="comming-soon" class="slider slider-main">
             <div class="viewport">
                 <i class="buttons prev icon-arowLeft"></i>
                 <ul class="overview slider-wrap">
 
-                    <% soon.movies.forEach(function (movie) { %>
+                    <% soon.forEach(function (movie) { %>
 
                     <li class="slider-item">
                         <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="Смотреть онлайн <%- movie.title %>"></a>
@@ -230,13 +231,64 @@
             </div>
         </div>
     </div>
+    <div style="clear: both"></div>
 
     <% } %>
 
-</div>
+    <% if (typeof news === 'object' && news.length) { %>
+    <% news.forEach(function (content) { %>
+    <div style="float: left; width: 100%;">
+        <div style="margin: 0; padding: 10px">
+            <a href="<%- content.url %>" class="cinemapress-news">
+                <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>" style="height: 200px">
+                <div class="cinemapress-news-title">
+                    <%- content.title %>
+                </div>
+            </a>
+        </div>
+    </div>
+    <% }); %>
+    <div style="clear: both"></div>
+    <% } %>
 
-<% if (typeof page.adv == 'object' && page.adv.left) { %>
-<div style="text-align: center; margin: 10px auto">
-    <%- page.adv.left %>
+    <% if (typeof page.adv === 'object' && page.adv.left) { %>
+    <div style="text-align: center; margin: 10px auto">
+        <%- page.adv.left %>
+    </div>
+    <div style="clear: both"></div>
+    <% } %>
+
+    <% if (typeof recent === 'object' && recent.length) { %>
+    <% recent.forEach(function (comment) { %>
+    <div style="width: 280px; margin: 0 10px;">
+        <div class="cinemapress-recent" style="background: none; border: 0;">
+            <div class="cinemapress-recent-head">
+                <% if (comment.avatar) { %>
+                <div class="cinemapress-recent-head-avatar" style="background: #F36839; border: 5px #F36839 solid;">
+                    <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+                </div>
+                <% } %>
+                <div class="cinemapress-recent-head-meta">
+                    <div>
+                        <a href="<%- comment.url %>" style="color: #000"><%- comment.title %></a>
+                    </div>
+                    <div>
+                        <span>
+                            <%- comment.user %>
+                        </span><span>
+                            сказал(а)
+                        </span><span>
+                            <%- comment.date %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="cinemapress-recent-comment" style="background: #F36839; color: #fff">
+                <%- comment.comment %>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+    <% } %>
+
 </div>
-<% } %>

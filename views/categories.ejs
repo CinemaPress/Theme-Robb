@@ -15,7 +15,7 @@
 
     </header>
 
-    <% if (typeof slider == 'object' && slider.movies.length) { %>
+    <% if (typeof slider === 'object' && slider.length) { %>
 
     <div class="favorites-slider">
         <div class="container">
@@ -24,7 +24,7 @@
                 <div class="viewport">
                     <ul class="overview">
 
-                        <% slider.movies.forEach(function (movie) { %>
+                        <% slider.forEach(function (movie) { %>
 
                         <li>
                             <a href="<%- movie.url %>">
@@ -79,12 +79,26 @@
                 </a>
             </li>
             <% } %>
+            <% if (page.social.youtube) { %>
+            <li class="ok-count" data-type="ok">
+                <a href="<%- page.social.youtube %>" target="_blank">
+                    <span class="yt icon-play">YouTube</span>
+                </a>
+            </li>
+            <% } %>
+            <% if (page.social.instagram) { %>
+            <li class="ok-count" data-type="ok">
+                <a href="<%- page.social.instagram %>" target="_blank">
+                    <span class="ig icon-ig-m">Instagram</span>
+                </a>
+            </li>
+            <% } %>
         </ul>
     </div>
 
     <% } %>
 
-    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+    <% if (typeof page.adv === 'object' && page.adv.top) { %>
     <div class="container user-playlists-slider main-playlist" style="margin-top: 30px; padding: 10px;">
         <div class="viewport" style="text-align: center;">
             <%- page.adv.top %>
@@ -105,7 +119,7 @@
             <div class="content">
 
                 <div id="breadcrumb">
-                    <a href="<%- page.protocol %><%- page.domain %>">
+                    <a href="/">
                         Главная
                     </a>
                     <span class="separetor">/</span>
@@ -121,27 +135,23 @@
                 </div>
 
                 <div class="line-block">
-                    <div class='cinemapress-content'>
+                    <div class="cinemapress-content-main">
 
-                        <% if (typeof categories == 'object' && categories.length) { %>
-
-                        <% categories.forEach(function (category) { %>
-
-                        <article class="shortstory grid">
-                            <div class="short">
-                                <a href="<%- category.url %>">
-                                    <div class="like-count-wrap">
-                                        <img src="<% if (category.image) { %><%- category.image %><% } else { %>https://st.kp.yandex.net/images/kadr/sm_2136182.jpg<% } %>" class="poster" style="height: 156px;" alt="<%- category.name %>">
+                        <% if (typeof categories === 'object' && categories.length) { %>
+                        <div style="clear: both"></div>
+                        <% categories.forEach(function (content) { %>
+                        <div style="float: left; width: 50%;">
+                            <div style="margin: 0; padding: 10px">
+                                <a href="<%- content.url %>" class="cinemapress-news">
+                                    <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                                    <div class="cinemapress-news-title">
+                                        <%- content.title %>
                                     </div>
                                 </a>
-                                <a href="<%- category.url %>">
-                                    <h2 class="name"><%- category.name %></h2>
-                                </a>
                             </div>
-                        </article>
-
+                        </div>
                         <% }); %>
-
+                        <div style="clear: both"></div>
                         <% } %>
 
                     </div>
@@ -150,7 +160,7 @@
 
         </div>
 
-        <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+        <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
         <div class="container user-playlists-slider main-playlist" style="padding: 10px;">
             <div class="viewport" style="text-align: center;">
                 <%- page.adv.bottom %>

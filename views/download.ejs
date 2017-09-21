@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" prefix="og: http://ogp.me/ns#
+              video: http://ogp.me/ns/video#
+              ya: http://webmaster.yandex.ru/vocabularies/">
 <head>
 
     <% include includes/head.ejs %>
@@ -15,7 +17,7 @@
 
     </header>
 
-    <% if (typeof slider == 'object' && slider.movies.length) { %>
+    <% if (typeof slider === 'object' && slider.length) { %>
 
     <div class="favorites-slider">
         <div class="container">
@@ -24,7 +26,7 @@
                 <div class="viewport">
                     <ul class="overview">
 
-                        <% slider.movies.forEach(function (movie) { %>
+                        <% slider.forEach(function (movie) { %>
 
                         <li>
                             <a href="<%- movie.url %>">
@@ -74,17 +76,19 @@
         <div class="container-main">
             <div class="content" id="content">
                 <div class="line-block">
-                    <div id='cinemapress-content'>
+                    <div id='cinemapress-content-main'>
                         <div class="play">
                             <h2 class="hidden">
                                 <%- movie.title %> / <%- movie.title_en %> (<%- movie.year %>)
                             </h2>
                             <div id="breadcrumb">
-                                <a href="<%- page.protocol %><%- page.domain %>">
+                                <a href="/">
                                     Главная
                                 </a>
+                                <% if (movie.genre_url) { %>
                                 <span class="separetor">/</span>
                                 <%- movie.genre_url %>
+                                <% } %>
                                 <span class="separetor">/</span>
                                 <a href="<%- movie.url %>">
                                     <%- movie.title %>
@@ -95,7 +99,7 @@
                                 </span>
                             </div>
 
-                            <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                            <% if (typeof page.adv === 'object' && page.adv.over) { %>
                             <div style="text-align: center; margin: 10px auto;">
                                 <%- page.adv.over %>
                             </div>
@@ -121,7 +125,7 @@
                                 <%- page.player %>
                             </div>
 
-                            <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                            <% if (typeof page.adv === 'object' && page.adv.under) { %>
                             <div style="text-align: center; margin: 10px auto;">
                                 <%- page.adv.under %>
                             </div>
@@ -131,6 +135,23 @@
                             <div style="text-align: justify; margin: 20px auto;">
                                 <%- page.seo %>
                             </div>
+                            <% } %>
+
+                            <% if (typeof contents === 'object' && contents.length) { %>
+                            <div style="clear: both"></div>
+                            <% contents.forEach(function (content) { %>
+                            <div style="float: left; width: 33.33%;">
+                                <div style="margin: 0; padding: 10px">
+                                    <a href="<%- content.url %>" class="cinemapress-news">
+                                        <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+                                        <div class="cinemapress-news-title">
+                                            <%- content.title %>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <% }); %>
+                            <div style="clear: both"></div>
                             <% } %>
                         </div>
                     </div>
