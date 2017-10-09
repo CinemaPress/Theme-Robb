@@ -16,7 +16,6 @@
     </header>
 
     <% if (typeof slider === 'object' && slider.length) { %>
-
     <div class="favorites-slider">
         <div class="container">
             <div id="favorites" class="slider">
@@ -25,7 +24,6 @@
                     <ul class="overview">
 
                         <% slider.forEach(function (movie) { %>
-
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
@@ -35,7 +33,6 @@
                                 <div class="film-name"><%- movie.title %></div>
                             </a>
                         </li>
-
                         <% }); %>
 
                     </ul>
@@ -44,7 +41,6 @@
             </div>
         </div>
     </div>
-
     <% } %>
 
     <% if (typeof page.adv === 'object' && page.adv.top) { %>
@@ -63,18 +59,26 @@
                     <li class="active open">
                         <a href="<%- movie.url %>">Описание</a>
                     </li>
+                    <% if (page.urls.movies.online) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
                     </li>
+                    <% } %>
+                    <% if (page.urls.movies.download) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
                     </li>
+                    <% } %>
+                    <% if (page.urls.movies.trailer) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлеры</a>
                     </li>
+                    <% } %>
+                    <% if (page.urls.movies.picture) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
                     </li>
+                    <% } %>
                 </ul>
             </div>
         </div>
@@ -105,17 +109,21 @@
                         <article class="fullstory">
                             <div class="short min">
                                 <span>
-                                    <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title %>">
+                                    <img src="<%- movie.poster %>" class="poster" alt="<%- movie.title %>">
                                 </span>
+                                <% if (page.urls.movies.online) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">
                                     Смотреть онлайн
                                 </a>
+                                <% } %>
+                                <% if (page.urls.movies.download) { %>
                                 <ul>
                                     <li class="download">
                                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="icon-download">Скачать</a>
                                     </li>
                                 </ul>
-
+                                <% } %>
+                                <% if (page.urls.movies.trailer) { %>
                                 <div class="trailer-wrap">
                                     <span class="trailer-title">Трейлер:</span>
                                     <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
@@ -123,11 +131,11 @@
                                         <div class="trailer-video"></div>
                                     </a>
                                 </div>
-
+                                <% } %>
                             </div>
                             <div class="full min">
                                 <div class="name-block">
-                                    <h1 class="name"><%- movie.title %> смотреть онлайн</h1>
+                                    <h1 class="name"><%- movie.title %></h1>
                                     <div class="origin-name"><strong><%- movie.title_en %></strong>
                                     </div>
                                 </div>
@@ -253,7 +261,7 @@
                         <% } %>
 
                         <div class="player-main-block">
-                            <h2>Смотреть онлайн</h2>
+                            <h2><%- movie.title %></h2>
                             <div class="player-item">
                                 <header>
                                     <div class="watchLaterBlock" style="display: none;">
@@ -261,10 +269,9 @@
                                     </div>
                                 </header>
                                 <div class="players">
-
                                     <%- page.player %>
-
                                 </div>
+                                <% if (page.urls.movies.download) { %>
                                 <div class="reports-subscribe" style="padding: 20px 0;">
                                     <span class="download">
                                         <a class="icon-download" href="<%- movie.url %>/<%- page.urls.movies.download %>">
@@ -272,6 +279,7 @@
                                         </a>
                                     </span>
                                 </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -298,12 +306,10 @@
                         <div style="clear: both"></div>
                         <% } %>
 
-                        <% if (typeof movies === 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
-
-                        <% if (movies[type].length) { %>
-
-                        <% movies[type].forEach(function (category) { %>
-
+                        <% if (typeof movies === 'object') {
+                            for (var type in movies) {
+                                if (movies.hasOwnProperty(type) && movies[type].length) {
+                                    movies[type].forEach(function (category) { %>
                         <div class="careers-actor slider slider-main">
                             <div class="head-title clearfix">
                                 <div class="subtitle">
@@ -316,11 +322,8 @@
                             </div>
                             <div class="viewport">
                                 <ul class="slider-wrap overview">
-
-                                    <% if (category.movies.length) { %>
-
-                                    <% category.movies.forEach(function (movie) { %>
-
+                                    <% if (category.movies.length) {
+                                        category.movies.forEach(function (movie) { %>
                                     <li class="slider-item">
                                         <a href="<%- movie.url %>">
                                             <span class="slider-img ">
@@ -329,34 +332,19 @@
                                             <div class="film-name"><%- movie.title %></div>
                                         </a>
                                     </li>
-
-                                    <% }); %>
-
-                                    <% } %>
-
+                                    <% }); } %>
                                 </ul>
                             </div>
                         </div>
-
-                        <% }); %>
-
-                        <% } %>
-
-                        <% } } } %>
+                        <% }); } } } %>
 
                         <% if (page.comments) { %>
-
                         <div class="cr-block com">
                             <h2 class="cr-title">Отзывы на фильм <%- movie.title %></h2>
-
                             <div id="commentstab" class="tab-block open">
-
                                 <%- page.comments %>
-
                             </div>
-
                         </div>
-
                         <% } %>
 
                     </div>
@@ -374,7 +362,6 @@
         <% } %>
 
         <% if (page.seo) { %>
-
         <div class="container user-playlists-slider main-playlist">
             <div class="head-title">
                 <div class="subtitle"><%- page.title %></div>
@@ -383,7 +370,6 @@
                 <%- page.seo %>
             </div>
         </div>
-
         <% } %>
 
         <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">

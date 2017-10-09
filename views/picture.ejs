@@ -16,7 +16,6 @@
     </header>
 
     <% if (typeof slider === 'object' && slider.length) { %>
-
     <div class="favorites-slider">
         <div class="container">
             <div id="favorites" class="slider">
@@ -25,7 +24,6 @@
                     <ul class="overview">
 
                         <% slider.forEach(function (movie) { %>
-
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
@@ -35,7 +33,6 @@
                                 <div class="film-name"><%- movie.title %></div>
                             </a>
                         </li>
-
                         <% }); %>
 
                     </ul>
@@ -44,7 +41,6 @@
             </div>
         </div>
     </div>
-
     <% } %>
 
     <div id="main" class="play">
@@ -55,18 +51,26 @@
                     <li class="active not-click">
                         <a href="<%- movie.url %>">Описание</a>
                     </li>
+                    <% if (page.urls.movies.online) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
                     </li>
+                    <% } %>
+                    <% if (page.urls.movies.download) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
                     </li>
+                    <% } %>
+                    <% if (page.urls.movies.trailer) { %>
                     <li class="active not-click">
                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлеры</a>
                     </li>
+                    <% } %>
+                    <% if (page.urls.movies.picture) { %>
                     <li class="active open">
                         <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
                     </li>
+                    <% } %>
                 </ul>
             </div>
         </div>
@@ -110,12 +114,14 @@
                                 <h3><%- movie.title %> новые серии</h3>
                                 <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                             </div>
+                            <% if (page.urls.movies.download) { %>
                             <header>
                                 <div class="other-block">
                                     <span class="other-item"><a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="download icon-download">Скачать</a></span>
                                 </div>
                                 <div class="clearfix"></div>
                             </header>
+                            <% } %>
                             <div class="clearfix"></div>
                             <div class="players" style="height: inherit;">
                                 <div id="MT_overroll">

@@ -16,7 +16,6 @@
     </header>
 
     <% if (typeof slider === 'object' && slider.length) { %>
-
     <div class="favorites-slider">
         <div class="container">
             <div id="favorites" class="slider">
@@ -25,7 +24,6 @@
                     <ul class="overview">
 
                         <% slider.forEach(function (movie) { %>
-
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
@@ -35,7 +33,6 @@
                                 <div class="film-name"><%- movie.title %></div>
                             </a>
                         </li>
-
                         <% }); %>
 
                     </ul>
@@ -44,11 +41,9 @@
             </div>
         </div>
     </div>
-
     <% } %>
 
     <% if (page.social) { %>
-
     <div class="container social-counters">
         <ul class="social-wrap">
             <% if (page.social.vk) { %>
@@ -95,7 +90,6 @@
             <% } %>
         </ul>
     </div>
-
     <% } %>
 
     <% if (typeof page.adv === 'object' && page.adv.top) { %>
@@ -165,30 +159,21 @@
                         <div class="sort custom-sort">
                             <span>Сортировка</span>
 
-                            <% page.sorting.forEach(function (sort) { %>
-
-                            <% if (sort.active) { %>
-
+                            <% page.sorting.forEach(function (sort) {
+                                if (sort.active) { %>
                             <span class="btn-sort" data-type="date">
 								<%- sort.name %> <i class="fa info-fa btn-down icon-arowDown"></i>
 							</span>
-
-                            <% } %>
-
-                            <% }); %>
+                            <% } }); %>
 
                             <div class="sort-items">
-
                                 <% page.sorting.forEach(function (sort) { %>
-
                                 <a href="<%- sort.url %>">
                                     <span class="sort-item">
                                         <%- sort.name %>
                                     </span>
                                 </a>
-
                                 <% }); %>
-
                             </div>
 
                         </div>
@@ -201,10 +186,8 @@
                 <div class="line-block">
                     <div class="cinemapress-content-main">
 
-                        <% if (typeof movies === 'object' && movies.length) { %>
-
-                        <% movies.forEach(function (movie) { %>
-
+                        <% if (typeof movies === 'object' && movies.length) {
+                            movies.forEach(function (movie) { %>
                         <article class="shortstory line">
                             <div class="short">
                                 <a href="<%- movie.url %>">
@@ -221,7 +204,7 @@
                                     <h2 class="name"><%- movie.title %></h2>
                                     <div class="origin-name"><%- movie.title_en %></div>
                                 </a>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">Смотреть онлайн</a>
+                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">Смотреть подробнее</a>
                             </div>
 
                             <div class="full">
@@ -295,10 +278,7 @@
 
                             </div>
                         </article>
-
-                        <% }); %>
-
-                        <% } %>
+                        <% }); } %>
 
                         <% if (typeof page.pagination === 'object') { %>
                         <div class="navigation">
@@ -347,13 +327,11 @@
         <% } %>
 
         <% if (page.seo) { %>
-
         <div class="container user-playlists-slider main-playlist">
             <div class="viewport">
                 <%- page.seo %>
             </div>
         </div>
-
         <% } %>
 
         <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">

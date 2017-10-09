@@ -16,7 +16,6 @@
     </header>
 
     <% if (typeof slider === 'object' && slider.length) { %>
-
     <div class="favorites-slider">
         <div class="container">
             <div id="favorites" class="slider">
@@ -25,7 +24,6 @@
                     <ul class="overview">
 
                         <% slider.forEach(function (movie) { %>
-
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
@@ -35,7 +33,6 @@
                                 <div class="film-name"><%- movie.title %></div>
                             </a>
                         </li>
-
                         <% }); %>
 
                     </ul>
@@ -44,11 +41,9 @@
             </div>
         </div>
     </div>
-
     <% } %>
 
     <% if (page.social) { %>
-
     <div class="container social-counters">
         <ul class="social-wrap">
             <% if (page.social.vk) { %>
@@ -95,7 +90,6 @@
             <% } %>
         </ul>
     </div>
-
     <% } %>
 
     <% if (typeof page.adv === 'object' && page.adv.top) { %>
@@ -125,31 +119,23 @@
 
                 <div class="line-block">
 
-                    <% if (typeof index === 'object') { for (var type in index) { if (index.hasOwnProperty(type)) { %>
-
-                    <% if (index[type].length) { %>
-
-                    <% index[type].forEach(function (category) { %>
-
+                    <% if (typeof index === 'object') {
+                        for (var type in index) {
+                            if (index.hasOwnProperty(type) && index[type].length) {
+                                index[type].forEach(function (category) { %>
                     <div class="head-title">
-
                         <h2 class="subtitle">
                             <%- category.name %>
                         </h2>
-
                     </div>
-
                     <div class="cinemapress-content-main">
-
-                        <% if (category.movies.length) { %>
-
-                        <% category.movies.forEach(function (movie) { %>
-
+                        <% if (category.movies.length) {
+                            category.movies.forEach(function (movie) { %>
                         <article class="shortstory line">
                             <div class="short">
                                 <a href="<%- movie.url %>">
                                     <div class="like-count-wrap">
-                                        <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%- movie.title %>">
+                                        <img src="<%- movie.poster %>" class="poster" alt="<%- movie.title %>">
                                         <% if (movie.quality) { %>
                                         <div class="like">
                                             <div class="count green"><%- movie.quality %></div>
@@ -162,12 +148,10 @@
                                     <div class="origin-name"><%- movie.title_en %></div>
                                 </a>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch">
-                                    Смотреть онлайн
+                                    Смотреть подробнее
                                 </a>
                             </div>
-
                             <div class="full">
-
                                 <% if (movie.premiere) { %>
                                 <div class="top-date">
                                     <div class="block-date">
@@ -237,18 +221,9 @@
 
                             </div>
                         </article>
-
-                        <% }); %>
-
-                        <% } %>
-
+                        <% }); } %>
                     </div>
-
-                    <% }); %>
-
-                    <% } %>
-
-                    <% } } } %>
+                    <% }); } } } %>
 
                 </div>
 
@@ -291,7 +266,6 @@
         <% } %>
 
         <% if (page.seo) { %>
-
         <div class="container user-playlists-slider main-playlist">
             <div class="head-title">
                 <h1 class="subtitle"><%- page.title %></h1>
@@ -300,7 +274,6 @@
                 <%- page.seo %>
             </div>
         </div>
-
         <% } %>
 
         <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">
