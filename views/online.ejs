@@ -53,7 +53,7 @@
                     </li>
                     <% if (page.urls.movies.online) { %>
                     <li class="active open">
-                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                        <span>Онлайн</span>
                     </li>
                     <% } %>
                     <% if (page.urls.movies.download) { %>
@@ -121,9 +121,11 @@
                                         <span class="continue tooltip" id="watchLater" title="Когда будет время, просто нажмете вверху экрана кнопку «Продолжить»">Досмотреть позже</span>
                                     </div>
                                 </div>
+                                <% if (page.urls.movies.download) { %>
                                 <div class="other-block">
                                     <span class="other-item"><a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="download icon-download">Скачать</a></span>
                                 </div>
+                                <% } %>
                                 <div class="clearfix"></div>
                             </header>
                             <div class="clearfix"></div>
