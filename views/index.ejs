@@ -27,10 +27,10 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
-                                <div class="film-name"><%- movie.title %></div>
+                                <div class="film-name"><%= movie.title %></div>
                             </a>
                         </li>
                         <% }); %>
@@ -135,7 +135,7 @@
                             <div class="short">
                                 <a href="<%- movie.url %>">
                                     <div class="like-count-wrap">
-                                        <img src="<%- movie.poster %>" class="poster" alt="<%- movie.title %>">
+                                        <img src="<%- movie.poster %>" class="poster" alt="<%= movie.title %>">
                                         <% if (movie.quality) { %>
                                         <div class="like">
                                             <div class="count green"><%- movie.quality %></div>
@@ -144,8 +144,8 @@
                                     </div>
                                 </a>
                                 <a href="<%- movie.url %>">
-                                    <h3 class="name"><%- movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></h3>
-                                    <div class="origin-name"><%- movie.title_en %></div>
+                                    <h3 class="name"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></h3>
+                                    <div class="origin-name"><%= movie.title_en %></div>
                                 </a>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch">
                                     Смотреть подробнее
@@ -161,9 +161,9 @@
                                 <% } %>
                                 <div class="name-block">
                                     <h3 class="name">
-                                        <a href="<%- movie.url %>"><%- movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></a>
+                                        <a href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></a>
                                     </h3>
-                                    <div class="origin-name"><%- movie.title_en %></div>
+                                    <div class="origin-name"><%= movie.title_en %></div>
                                 </div>
 
                                 <% if (movie.genres_url) { %>

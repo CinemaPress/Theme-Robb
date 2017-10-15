@@ -27,10 +27,10 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
-                                <div class="film-name"><%- movie.title %></div>
+                                <div class="film-name"><%= movie.title %></div>
                             </a>
                         </li>
                         <% }); %>
@@ -104,12 +104,12 @@
                             <%- movie.genre_url %>
                             <% } %>
                             <span class="separetor">/</span>
-                            <span class="active"><%- movie.title %></span>
+                            <span class="active"><%= movie.title %></span>
                         </div>
                         <article class="fullstory">
                             <div class="short min">
                                 <span>
-                                    <img src="<%- movie.poster %>" class="poster" alt="<%- movie.title %>">
+                                    <img src="<%- movie.poster %>" class="poster" alt="<%= movie.title %>">
                                 </span>
                                 <% if (page.urls.movies.online) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">
@@ -135,8 +135,8 @@
                             </div>
                             <div class="full min">
                                 <div class="name-block">
-                                    <h1 class="name"><%- movie.title %></h1>
-                                    <div class="origin-name"><strong><%- movie.title_en %></strong>
+                                    <h1 class="name"><%= movie.title %></h1>
+                                    <div class="origin-name"><strong><%= movie.title_en %></strong>
                                     </div>
                                 </div>
                                 <% if (movie.premiere) { %>
@@ -250,7 +250,7 @@
                         </article>
 
                         <div class="episodesListBlock" style="display: none;">
-                            <h3><%- movie.title %> новые серии</h3>
+                            <h3><%= movie.title %> новые серии</h3>
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                         </div>
 
@@ -261,7 +261,7 @@
                         <% } %>
 
                         <div class="player-main-block">
-                            <h2><%- movie.title %></h2>
+                            <h2><%= movie.title %></h2>
                             <div class="player-item">
                                 <header>
                                     <div class="watchLaterBlock" style="display: none;">
@@ -327,9 +327,9 @@
                                     <li class="slider-item">
                                         <a href="<%- movie.url %>">
                                             <span class="slider-img ">
-                                                <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
+                                                <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
                                             </span>
-                                            <div class="film-name"><%- movie.title %></div>
+                                            <div class="film-name"><%= movie.title %></div>
                                         </a>
                                     </li>
                                     <% }); } %>
@@ -340,7 +340,7 @@
 
                         <% if (page.comments) { %>
                         <div class="cr-block com">
-                            <h2 class="cr-title">Отзывы на фильм <%- movie.title %></h2>
+                            <h2 class="cr-title">Отзывы на фильм <%= movie.title %></h2>
                             <div id="commentstab" class="tab-block open">
                                 <%- page.comments %>
                             </div>

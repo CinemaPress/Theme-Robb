@@ -27,10 +27,10 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
-                                <div class="film-name"><%- movie.title %></div>
+                                <div class="film-name"><%= movie.title %></div>
                             </a>
                         </li>
                         <% }); %>
@@ -82,7 +82,7 @@
                     <div id='cinemapress-content-main'>
                         <div class="play">
                             <h2 class="hidden">
-                                <%- movie.title %> / <%- movie.title_en %> (<%- movie.year %>)
+                                <%= movie.title %> / <%= movie.title_en %> (<%- movie.year %>)
                             </h2>
                             <div id="breadcrumb">
                                 <a href="/">
@@ -94,7 +94,7 @@
                                 <% } %>
                                 <span class="separetor">/</span>
                                 <a href="<%- movie.url %>">
-                                    <%- movie.title %>
+                                    <%= movie.title %>
                                 </a>
                                 <span class="separetor">/</span>
                                 <span class="active">
@@ -109,10 +109,10 @@
                             <% } %>
 
                             <h1 id="play-descr" class="title-page">
-                                Онлайн <a href="<%- movie.url %>"><%- movie.title %></a>
+                                Онлайн <a href="<%- movie.url %>"><%= movie.title %></a>
                             </h1>
                             <div class="episodesListBlock" style="display: none; margin-bottom: 20px;">
-                                <h3><%- movie.title %> новые серии</h3>
+                                <h3><%= movie.title %> новые серии</h3>
                                 <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                             </div>
                             <header>

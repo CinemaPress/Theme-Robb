@@ -29,10 +29,10 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%- movie.title %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
-                                <div class="film-name"><%- movie.title %></div>
+                                <div class="film-name"><%= movie.title %></div>
                             </a>
                         </li>
 

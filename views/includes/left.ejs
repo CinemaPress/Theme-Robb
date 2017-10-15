@@ -10,7 +10,7 @@
         <% [top.shift()].forEach(function (movie) { %>
 
         <div id="now-playing" class="slider slider-main">
-            <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="Смотреть онлайн <%- movie.title %>"></a>
+            <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="Смотреть онлайн <%= movie.title %>"></a>
         </div>
 
         <% }); %>
@@ -22,8 +22,8 @@
 
         <div class="list-item">
             <a href="<%- movie.url %>" class="name-movie">
-                <span class="name-rus"><%- movie.title %></span>
-                <span class="name-eng"><%- movie.title_en %></span>
+                <span class="name-rus"><%= movie.title %></span>
+                <span class="name-eng"><%= movie.title_en %></span>
             </a>
         </div>
 
@@ -216,11 +216,11 @@
                     <% soon.forEach(function (movie) { %>
 
                     <li class="slider-item">
-                        <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="Смотреть онлайн <%- movie.title %>"></a>
+                        <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="Смотреть онлайн <%= movie.title %>"></a>
                         <div class="comming-soon-name">
                             <a href="<%- movie.poster %>" class="name-movie">
-                                <span class="name-rus"><%- movie.title %></span>
-                                <span class="name-eng"><%- movie.title_en %></span></a>
+                                <span class="name-rus"><%= movie.title %></span>
+                                <span class="name-eng"><%= movie.title_en %></span></a>
                         </div>
                     </li>
 
