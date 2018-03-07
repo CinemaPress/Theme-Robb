@@ -147,7 +147,7 @@
                                     <h3 class="name"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></h3>
                                     <div class="origin-name"><%= movie.title_en %></div>
                                 </a>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch">
+                                <a href="<%- movie.url %>" class="watch">
                                     Смотреть подробнее
                                 </a>
                             </div>
