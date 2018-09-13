@@ -268,8 +268,10 @@
                                         <span class="continue tooltip m-button" id="watchLater" title="Когда будет время, просто нажмете вверху экрана кнопку «Продолжить»">Досмотреть позже</span>
                                     </div>
                                 </header>
-                                <div class="players">
+                                <div id="cinemapress-player" class="players">
+                                    <% if (page.player) { %>
                                     <%- page.player %>
+                                    <% } %>
                                 </div>
                                 <% if (page.urls.movies.download) { %>
                                 <div class="reports-subscribe" style="padding: 20px 0;">

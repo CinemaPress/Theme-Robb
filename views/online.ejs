@@ -127,8 +127,10 @@
                                 <div class="clearfix"></div>
                             </header>
                             <div class="clearfix"></div>
-                            <div class="players">
+                            <div id="cinemapress-player" class="players">
+                                <% if (page.player) { %>
                                 <%- page.player %>
+                                <% } %>
                             </div>
 
                             <% if (typeof page.adv === 'object' && page.adv.under) { %>
