@@ -27,7 +27,7 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="<%- page.l.online %> <%= movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
                                 <div class="film-name"><%= movie.title %></div>
@@ -57,26 +57,26 @@
             <div class="container">
                 <ul>
                     <li class="active open">
-                        <span>Описание</span>
+                        <span><%- page.l.information %></span>
                     </li>
                     <% if (page.urls.movies.online) { %>
                     <li class="active not-click">
-                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.online %>"><%- page.l.online %></a>
                     </li>
                     <% } %>
                     <% if (page.urls.movies.download) { %>
                     <li class="active not-click">
-                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>"><%- page.l.download %></a>
                     </li>
                     <% } %>
                     <% if (page.urls.movies.trailer) { %>
                     <li class="active not-click">
-                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>"><%- page.l.trailer %></a>
                     </li>
                     <% } %>
                     <% if (page.urls.movies.picture) { %>
                     <li class="active not-click">
-                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>"><%- page.l.picture %></a>
                     </li>
                     <% } %>
                 </ul>
@@ -97,7 +97,7 @@
                     <div id='cinemapress-content-main'>
                         <div id="breadcrumb">
                             <a href="/">
-                                Главная
+                                <%- page.l.home %>
                             </a>
                             <% if (movie.genre_url) { %>
                             <span class="separetor">/</span>
@@ -109,23 +109,23 @@
                         <article class="fullstory">
                             <div class="short min">
                                 <span>
-                                    <img src="<%- movie.poster %>" class="poster" alt="<%= movie.title %>">
+                                    <img src="<%- movie.poster %>" class="poster" alt="<%= page.title %>" title="<%= page.title %>" id="cinemapress-poster">
                                 </span>
                                 <% if (page.urls.movies.online) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">
-                                    Смотреть онлайн
+                                    <%- page.l.online %>
                                 </a>
                                 <% } %>
                                 <% if (page.urls.movies.download) { %>
                                 <ul>
                                     <li class="download">
-                                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="icon-download">Скачать</a>
+                                        <a href="<%- movie.url %>/<%- page.urls.movies.download %>" class="icon-download"><%- page.l.download %></a>
                                     </li>
                                 </ul>
                                 <% } %>
                                 <% if (page.urls.movies.trailer) { %>
                                 <div class="trailer-wrap">
-                                    <span class="trailer-title">Трейлер:</span>
+                                    <span class="trailer-title"><%- page.l.trailer %>:</span>
                                     <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
                                         <div class="trailer-img icon-playSlim" style="background: url('<%- movie.picture_min %>') 100% 100% no-repeat; background-size: cover;"></div>
                                         <div class="trailer-video"></div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="full min">
                                 <div class="name-block">
-                                    <h1 class="name"><%= movie.title %></h1>
+                                    <h1 class="name"><%- page.h1 %></h1>
                                     <div class="origin-name"><strong><%= movie.title_en %></strong>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
 
                                 <% if (movie.directors_url) { %>
                                 <div class="item category">
-                                    <span class="label">Режиссер:</span>
+                                    <span class="label"><%- page.l.directors %>:</span>
                                     <span class="item-content">
                                         <%- movie.directors_url %>
                                     </span>
@@ -163,7 +163,7 @@
                                 <% } %>
                                 <% if (movie.actors_url) { %>
                                 <div class="item category">
-                                    <span class="label">В ролях:</span>
+                                    <span class="label"><%- page.l.actors %>:</span>
                                     <span class="item-content">
                                         <%- movie.actors_url %>
                                     </span>
@@ -171,7 +171,7 @@
                                 <% } %>
                                 <% if (movie.year_url) { %>
                                 <div class="item category">
-                                    <span class="label">Год:</span>
+                                    <span class="label"><%- page.l.year %>:</span>
                                     <span class="item-content">
                                         <%- movie.year_url %>
                                     </span>
@@ -179,7 +179,7 @@
                                 <% } %>
                                 <% if (movie.genres_url) { %>
                                 <div class="item category">
-                                    <span class="label">Жанр:</span>
+                                    <span class="label"><%- page.l.genres %>:</span>
                                     <span class="item-content">
                                         <%- movie.genres_url %>
                                     </span>
@@ -187,7 +187,7 @@
                                 <% } %>
                                 <% if (movie.countries_url) { %>
                                 <div class="item category">
-                                    <span class="label">Страна:</span>
+                                    <span class="label"><%- page.l.countries %>:</span>
                                     <span class="item-content">
                                         <%- movie.countries_url %>
                                     </span>
@@ -195,7 +195,7 @@
                                 <% } %>
                                 <% if (movie.quality) { %>
                                 <div class="item category">
-                                    <span class="label">Качество:</span>
+                                    <span class="label"><%- page.l.quality %>:</span>
                                     <span class="item-content">
                                         <%- movie.quality %>
                                     </span>
@@ -203,7 +203,7 @@
                                 <% } %>
                                 <% if (movie.translate) { %>
                                 <div class="item category">
-                                    <span class="label">Перевод:</span>
+                                    <span class="label"><%- page.l.translate %>:</span>
                                     <span class="item-content">
                                         <%- movie.translate %>
                                     </span>
@@ -215,7 +215,7 @@
                             <div class="full-panel">
                                 <div class="left">
                                     <header class="helpRating">
-                                        Рейтинг
+                                        <%- page.l.rating %>
                                     </header>
                                     <footer>
                                         <span class="kinopoisk btn-tooltip icon-kinopoisk">
@@ -231,7 +231,7 @@
                                     </footer>
                                 </div>
                                 <div class="center">
-                                    <header>Итоговый рейтинг</header>
+                                    <header><%- page.l.rating %></header>
                                     <div id="slider-range-min">
                                         <span style="width: <%- movie.rating %>%;" class="percent-p" data-percent-p="<%- movie.rating %>"></span>
                                         <span class="pic " style="left: <%- movie.rating %>%;"></span>
@@ -244,13 +244,13 @@
                                     </footer>
                                 </div>
                                 <div class="right rating">
-                                    <%- movie.vote %> голосов
+                                    <%- movie.vote %> <%- page.l.votes %>
                                 </div>
                             </div>
                         </article>
 
                         <div class="episodesListBlock" style="display: none;">
-                            <h3><%= movie.title %> новые серии</h3>
+                            <h3><%= movie.title %> <%- page.l.episodes %></h3>
                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                         </div>
 
@@ -265,7 +265,7 @@
                             <div class="player-item">
                                 <header>
                                     <div class="watchLaterBlock" style="display: none;">
-                                        <span class="continue tooltip m-button" id="watchLater" title="Когда будет время, просто нажмете вверху экрана кнопку «Продолжить»">Досмотреть позже</span>
+                                        <span class="continue tooltip m-button" id="watchLater"><%- page.l.later %></span>
                                     </div>
                                 </header>
                                 <div id="cinemapress-player" class="players">
@@ -277,7 +277,7 @@
                                 <div class="reports-subscribe" style="padding: 20px 0;">
                                     <span class="download">
                                         <a class="icon-download" href="<%- movie.url %>/<%- page.urls.movies.download %>">
-                                            Скачать
+                                            <%- page.l.download %>
                                         </a>
                                     </span>
                                 </div>
@@ -328,7 +328,7 @@
                                     <li class="slider-item">
                                         <a href="<%- movie.url %>">
                                             <span class="slider-img ">
-                                                <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
+                                                <img src="<%- movie.poster %>" class="film-poster" alt="<%- page.l.online %> <%= movie.title %>">
                                             </span>
                                             <div class="film-name"><%= movie.title %></div>
                                         </a>
@@ -341,7 +341,7 @@
 
                         <% if (page.comments) { %>
                         <div class="cr-block com">
-                            <h2 class="cr-title">Отзывы на фильм <%= movie.title %></h2>
+                            <h2 class="cr-title"><%- page.l.comments %> «<%= movie.title %>»</h2>
                             <div id="commentstab" class="tab-block open">
                                 <%- page.comments %>
                             </div>
@@ -375,7 +375,7 @@
 
         <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">
             <div class="viewport">
-                <div>Вы надавно смотрели:</div>
+                <div><%- page.l.watched %>:</div>
                 <div id="recentlyViewed"></div>
             </div>
         </div>

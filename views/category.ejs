@@ -27,7 +27,7 @@
                         <li>
                             <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="Смотреть онлайн <%= movie.title %>">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="<%- page.l.online %> <%= movie.title %>">
                                 </span>
                                 <i class="fa ico-play"></i>
                                 <div class="film-name"><%= movie.title %></div>
@@ -49,21 +49,21 @@
             <% if (page.social.vk) { %>
             <li class="vk-count" data-type="vk">
                 <a href="<%- page.social.vk %>" target="_blank">
-                    <span class="vk icon-vk-m">Вконтакте</span>
+                    <span class="vk icon-vk-m"><%- page.l.vk %></span>
                 </a>
             </li>
             <% } %>
             <% if (page.social.facebook) { %>
             <li class="fb-count" data-type="fb">
                 <a href="<%- page.social.facebook %>" target="_blank">
-                    <span class="fb icon-fb-m">Facebook</span>
+                    <span class="fb icon-fb-m"><%- page.l.facebook %></span>
                 </a>
             </li>
             <% } %>
             <% if (page.social.twitter) { %>
             <li class="tw-count" data-type="tw">
                 <a href="<%- page.social.twitter %>" target="_blank">
-                    <span class="tw icon-tw-m">Twitter</span>
+                    <span class="tw icon-tw-m"><%- page.l.twitter %></span>
                 </a>
             </li>
             <% } %>
@@ -77,14 +77,14 @@
             <% if (page.social.youtube) { %>
             <li class="ok-count" data-type="ok">
                 <a href="<%- page.social.youtube %>" target="_blank">
-                    <span class="yt icon-play">YouTube</span>
+                    <span class="yt icon-play"><%- page.l.youtube %></span>
                 </a>
             </li>
             <% } %>
             <% if (page.social.instagram) { %>
             <li class="ok-count" data-type="ok">
                 <a href="<%- page.social.instagram %>" target="_blank">
-                    <span class="ig icon-ig-m">Instagram</span>
+                    <span class="ig icon-ig-m"><%- page.l.instagram %></span>
                 </a>
             </li>
             <% } %>
@@ -119,7 +119,7 @@
 
                 <div id="breadcrumb">
                     <a href="/">
-                        Главная
+                        <%- page.l.home %>
                     </a>
                     <span class="separetor">/</span>
                     <span class="active"><%= page.title %></span>
@@ -127,7 +127,7 @@
 
                 <div class="head-title">
 
-                    <h1 class="subtitle"><%= page.title %></h1>
+                    <h1 class="subtitle"><%- page.h1 %></h1>
 
                     <div style="clear: both;"></div>
 
@@ -157,7 +157,7 @@
 
                     <div class="filter">
                         <div class="sort custom-sort">
-                            <span>Сортировка</span>
+                            <span><%- page.l.sorting %></span>
 
                             <% page.sorting.forEach(function (sort) {
                                 if (sort.active) { %>
@@ -192,7 +192,7 @@
                             <div class="short">
                                 <a href="<%- movie.url %>">
                                     <div class="like-count-wrap">
-                                        <img src="<%- movie.poster %>" class="poster" alt="Смотреть онлайн <%= movie.title %>">
+                                        <img src="<%- movie.poster %>" class="poster" alt="<%- page.l.online %> <%= movie.title %>">
                                         <% if (movie.quality) { %>
                                         <div class="like">
                                             <div class="count green"><%- movie.quality %></div>
@@ -204,7 +204,7 @@
                                     <h2 class="name"><%= movie.title %></h2>
                                     <div class="origin-name"><%= movie.title_en %></div>
                                 </a>
-                                <a href="<%- movie.url %>" class="watch icon-play">Смотреть подробнее</a>
+                                <a href="<%- movie.url %>" class="watch icon-play"><%- page.l.more %></a>
                             </div>
 
                             <div class="full">
@@ -225,7 +225,7 @@
 
                                 <% if (movie.genres_url) { %>
                                 <div class="item category">
-                                    <span class="lable">Жанр:</span>
+                                    <span class="lable"><%- page.l.genres %>:</span>
 									<span class="added-info">
                                         <%- movie.genres_url %>
 									</span>
@@ -234,7 +234,7 @@
 
                                 <% if (movie.year_url) { %>
                                 <div class="item category">
-                                    <span class="lable">Год:</span>
+                                    <span class="lable"><%- page.l.year %>:</span>
 									<span class="added-info">
                                         <%- movie.year_url %>
 									</span>
@@ -243,7 +243,7 @@
 
                                 <% if (movie.countries_url) { %>
                                 <div class="item category">
-                                    <span class="lable">Страна:</span>
+                                    <span class="lable"><%- page.l.countries %>:</span>
 									<span class="added-info">
                                         <%- movie.countries_url %>
 									</span>
@@ -252,7 +252,7 @@
 
                                 <% if (movie.directors_url) { %>
                                 <div class="item category">
-                                    <span class="lable">Режиссер:</span>
+                                    <span class="lable"><%- page.l.directors %>:</span>
 									<span class="added-info">
                                         <%- movie.directors_url %>
 									</span>
@@ -261,7 +261,7 @@
 
                                 <% if (movie.actors_url) { %>
                                 <div class="item category">
-                                    <span class="lable">В ролях:</span>
+                                    <span class="lable"><%- page.l.actors %>:</span>
 									<span class="added-info">
                                         <%- movie.actors_url %>
 									</span>
@@ -336,7 +336,7 @@
 
         <div class="container user-playlists-slider main-playlist recentlyViewedBlock" style="display: none;">
             <div class="viewport">
-                <div>Вы надавно смотрели:</div>
+                <div><%- page.l.watched %>:</div>
                 <div id="recentlyViewed"></div>
             </div>
         </div>

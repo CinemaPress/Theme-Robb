@@ -3,7 +3,7 @@
     <div class="search">
         <form method="get" action='/<%- page.urls.search %>/title' class="search_header">
             <div class="search-wrap icon-search">
-                <input type="text" name="q" id="search" placeholder="Что ищем?" autocomplete="off">
+                <input type="text" name="q" id="search" placeholder="<%- page.l.movieTitle %>" autocomplete="off">
                 <input class="f_submited" type="submit" value="">
                 <span class="close-search icon-close"></span>
             </div>
@@ -11,15 +11,15 @@
     </div>
     <ul class="header-menu">
         <li>
-            <span class="menu-title">Фильмы</span>
+            <span class="menu-title"><%- page.l.movies %></span>
             <div class="sub-nav-wrapper">
                 <ul class="sub-main-nav col-one">
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Все фильмы</a></li>
-                    <li><a href="/<%- page.urls.genre %>">Все жанры</a></li>
-                    <li><a href="/<%- page.urls.country %>">Все страны</a></li>
-                    <li><a href="/<%- page.urls.year %>">Все годы</a></li>
-                    <li><a href="/<%- page.urls.actor %>">Все актеры</a></li>
-                    <li><a href="/<%- page.urls.director %>">Все режиссеры</a></li>
+                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"><%- page.l.movies %></a></li>
+                    <li><a href="/<%- page.urls.genre %>"><%- page.l.allGenres %></a></li>
+                    <li><a href="/<%- page.urls.country %>"><%- page.l.allCountries %></a></li>
+                    <li><a href="/<%- page.urls.year %>"><%- page.l.allYears %></a></li>
+                    <li><a href="/<%- page.urls.actor %>"><%- page.l.allActors %></a></li>
+                    <li><a href="/<%- page.urls.director %>"><%- page.l.allDirectors %></a></li>
                 </ul>
                 <ul class="sub-main-nav">
                     <% page.urls.genres.slice(0,10).forEach(function(genre) { %>
@@ -52,21 +52,21 @@
                     <% page.urls.years.slice(0,10).forEach(function(year) { %>
                     <li>
                         <a href="<%- year.url %>">
-                            <%- year.title %> год
+                            <%- year.title %>
                         </a>
                     </li>
                     <% }); %>
                 </ul>
             </div>
         </li>
-        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>">Мультфильмы</a></li>
-        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>">Сериалы</a></li>
-        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>">Аниме</a></li>
-        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>">Передачи</a></li>
+        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>"><%- page.l.cartoons %></a></li>
+        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><%- page.l.series %></a></li>
+        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>"><%- page.l.anime %></a></li>
+        <li><a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>"><%- page.l.tv %></a></li>
     </ul>
 
     <div class="login guest">
-        <span class="open icon-play continueViewingBlock" id="continueViewing" style="display: none;">Продолжить</span>
+        <span class="open icon-play continueViewingBlock" id="continueViewing" style="display: none;"><%- page.l.continue %></span>
     </div>
 
 </div>
