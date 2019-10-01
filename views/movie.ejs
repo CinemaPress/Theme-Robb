@@ -315,6 +315,13 @@
                             <div class="head-title clearfix">
                                 <div class="subtitle">
                                     <%- category.name %>
+                                    <div class="randomMovieRelated">
+                                        <div class="cinemapress-random-related"
+                                             onclick="window.location.href='<%- category.url %>?random'"
+                                             title="<%- page.l.random %>">
+                                            <img src="/themes/robb/public/images/dice.svg" alt="<%- page.l.random %>">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="slider-navigation">
                                     <span class="buttons prev row-left icon-arowLeft"><i class="fa"></i></span>

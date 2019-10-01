@@ -15,90 +15,7 @@
 
     </header>
 
-    <% if (typeof slider === 'object' && slider.length) { %>
-    <div class="favorites-slider">
-        <div class="container">
-            <div id="favorites" class="slider">
-                <i class="buttons prev icon-sliderLeft"></i>
-                <div class="viewport">
-                    <ul class="overview">
-
-                        <% slider.forEach(function (movie) { %>
-                        <li>
-                            <a href="<%- movie.url %>">
-                                <span class="icon-noimage">
-                                    <img src="<%- movie.poster %>" class="film-poster" alt="<%- page.l.online %> <%= movie.title %>">
-                                </span>
-                                <i class="fa ico-play"></i>
-                                <div class="film-name"><%= movie.title %></div>
-                            </a>
-                        </li>
-                        <% }); %>
-
-                    </ul>
-                </div>
-                <i class="buttons next icon-sliderRight"></i>
-            </div>
-        </div>
-    </div>
-    <% } %>
-
-    <% if (page.social) { %>
-    <div class="container social-counters">
-        <ul class="social-wrap">
-            <% if (page.social.vk) { %>
-            <li class="vk-count" data-type="vk">
-                <a href="<%- page.social.vk %>" target="_blank">
-                    <span class="vk icon-vk-m"><%- page.l.vk %></span>
-                </a>
-            </li>
-            <% } %>
-            <% if (page.social.facebook) { %>
-            <li class="fb-count" data-type="fb">
-                <a href="<%- page.social.facebook %>" target="_blank">
-                    <span class="fb icon-fb-m"><%- page.l.facebook %></span>
-                </a>
-            </li>
-            <% } %>
-            <% if (page.social.twitter) { %>
-            <li class="tw-count" data-type="tw">
-                <a href="<%- page.social.twitter %>" target="_blank">
-                    <span class="tw icon-tw-m"><%- page.l.twitter %></span>
-                </a>
-            </li>
-            <% } %>
-            <% if (page.social.gplus) { %>
-            <li class="ok-count" data-type="ok">
-                <a href="<%- page.social.gplus %>" target="_blank">
-                    <span class="ok icon-gp-m">G+</span>
-                </a>
-            </li>
-            <% } %>
-            <% if (page.social.youtube) { %>
-            <li class="ok-count" data-type="ok">
-                <a href="<%- page.social.youtube %>" target="_blank">
-                    <span class="yt icon-play"><%- page.l.youtube %></span>
-                </a>
-            </li>
-            <% } %>
-            <% if (page.social.instagram) { %>
-            <li class="ok-count" data-type="ok">
-                <a href="<%- page.social.instagram %>" target="_blank">
-                    <span class="ig icon-ig-m"><%- page.l.instagram %></span>
-                </a>
-            </li>
-            <% } %>
-        </ul>
-    </div>
-    <% } %>
-
-    <% if (typeof page.adv === 'object' && page.adv.top) { %>
-    <div class="container user-playlists-slider main-playlist" style="margin-top: 30px; padding: 10px;">
-        <div class="viewport" style="text-align: center;">
-            <%- page.adv.top %>
-        </div>
-    </div>
-    <% } %>
+    <% include includes/header2.ejs %>
 
     <div id="main" class="cat">
 
@@ -152,6 +69,15 @@
                     </div>
                     <div style="clear: both;"></div>
                     <% } %>
+
+                    <div class="randomMovieCategory">
+                        <div class="cinemapress-random-category"
+                             onclick="window.location.href='<%- page.url %>?random'">
+                            <img src="/themes/robb/public/images/dice.svg" alt="<%- page.l.random %>">
+                            <span><%- page.l.lucky %></span>
+                            <small><%- page.l.random %></small>
+                        </div>
+                    </div>
 
                     <% if (typeof page.sorting === 'object') { %>
 

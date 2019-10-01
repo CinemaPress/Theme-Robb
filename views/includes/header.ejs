@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="logo"><a href="/"></a></div>
+    <div class="logo" style="background:url(/themes/robb/public/images/logo.png?v=<%- page.ver %>) no-repeat 0 0;"><a href="/"></a></div>
     <div class="search">
-        <form method="get" action='/<%- page.urls.search %>/title' class="search_header">
+        <form method="get" action="/<%- page.urls.search %>" class="search_header">
             <div class="search-wrap icon-search">
-                <input type="text" name="q" id="search" placeholder="<%- page.l.movieTitle %>" autocomplete="off">
+                <input type="text" name="q" id="search" placeholder="<%- page.l.movieTitle %>" data-autocomplete="desktop">
                 <input class="f_submited" type="submit" value="">
                 <span class="close-search icon-close"></span>
             </div>
@@ -68,5 +68,13 @@
     <div class="login guest">
         <span class="open icon-play continueViewingBlock" id="continueViewing" style="display: none;"><%- page.l.continue %></span>
     </div>
+
+    <div class="randomMovieMenu">
+        <div class="login guest cinemapress-random-menu" title="<%- page.l.lucky %>">
+            <a href="/?random"><img src="/themes/robb/public/images/dice.svg" alt="<%- page.l.lucky %>"></a>
+        </div>
+    </div>
+
+    <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
 
 </div>

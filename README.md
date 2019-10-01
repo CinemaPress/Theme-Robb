@@ -1,10 +1,10 @@
 # Theme «robb»
 
-![Theme «robb» for CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Robb/master/screenshot.png "Theme «robb» for CinemaPress ACMS")
+![Theme «robb» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Robb/master/screenshot.png "Theme «robb» for CinemaPress")
 
-:art: Theme «robb» for CinemaPress ACMS
+:art: Theme «robb» for CinemaPress
 
-- [Robb.CinemaPress.org](http://Robb.CinemaPress.org/)
+- [Robb.CinemaPress.io](http://Robb.CinemaPress.io/)
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Robb/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Robb/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-robb/get/master.zip) or [Coding](https://coding.net/u/CinemaPress/p/Theme-Robb/git/archive/master.zip)
@@ -14,7 +14,7 @@
 
 ## Installation via terminal
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
 
 ## Как установить?
@@ -25,5 +25,5 @@
 
 ## Установка через терминал
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```

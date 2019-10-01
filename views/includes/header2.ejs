@@ -1,0 +1,78 @@
+<% if (typeof slider === 'object' && slider.length) { %>
+
+    <div class="favorites-slider">
+        <div class="container">
+            <div id="favorites" class="slider">
+                <i class="buttons prev icon-sliderLeft"></i>
+                <div class="viewport">
+                    <ul class="overview">
+
+                        <% slider.forEach(function (movie) { %>
+
+                            <li>
+                                <a href="<%- movie.url %>">
+                                <span class="icon-noimage">
+                                    <img src="<%- movie.poster %>" class="film-poster" alt="<%- page.l.online %> <%= movie.title %>">
+                                </span>
+                                    <i class="fa ico-play"></i>
+                                    <div class="film-name"><%= movie.title %></div>
+                                </a>
+                            </li>
+
+                        <% }); %>
+
+                    </ul>
+                </div>
+                <i class="buttons next icon-sliderRight"></i>
+            </div>
+        </div>
+    </div>
+
+<% } %>
+
+<% if (page.social) { %>
+
+    <div class="container social-counters">
+        <ul class="social-wrap social">
+            <% if (page.social.vk) { %>
+                <li class="vk">
+                    <a href="<%- page.social.vk %>" target="_blank"><%- page.l.vk %></a>
+                </li>
+            <% } %>
+            <% if (page.social.facebook) { %>
+                <li class="fcrk">
+                    <a href="<%- page.social.facebook %>" target="_blank"><%- page.l.facebook %></a>
+                </li>
+            <% } %>
+            <% if (page.social.telegram) { %>
+                <li class="tg">
+                    <a href="<%- page.social.telegram %>" target="_blank"><%- page.l.telegram %></a>
+                </li>
+            <% } %>
+            <% if (page.social.twitter) { %>
+                <li class="tw">
+                    <a href="<%- page.social.twitter %>" target="_blank"><%- page.l.twitter %></a>
+                </li>
+            <% } %>
+            <% if (page.social.youtube) { %>
+                <li class="yt">
+                    <a href="<%- page.social.youtube %>" target="_blank"><%- page.l.youtube %></a>
+                </li>
+            <% } %>
+            <% if (page.social.instagram) { %>
+                <li class="irrm">
+                    <a href="<%- page.social.instagram %>" target="_blank"><%- page.l.instagram %></a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+
+<% } %>
+
+<% if (typeof page.adv === 'object' && page.adv.top) { %>
+    <div class="container user-playlists-slider main-playlist" style="margin-top: 30px; padding: 10px;">
+        <div class="viewport" style="text-align: center;">
+            <%- page.adv.top %>
+        </div>
+    </div>
+<% } %>
