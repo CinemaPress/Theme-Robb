@@ -109,7 +109,7 @@
                         <article class="fullstory">
                             <div class="short min">
                                 <span>
-                                    <img src="<%- movie.poster %>" class="poster" alt="<%= page.title %>" title="<%= page.title %>" id="cinemapress-poster">
+                                    <img src="<%- movie.poster %>" class="poster" alt="<%= page.title %>" title="<%= page.title %>" data-cinemapress-poster="<%- movie.poster %>">
                                 </span>
                                 <% if (page.urls.movies.online) { %>
                                 <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="watch icon-play">
