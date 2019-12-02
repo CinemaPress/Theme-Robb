@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="logo" style="background:url(/themes/robb/public/images/logo.png?v=<%- page.ver %>) no-repeat 0 0;"><a href="/"></a></div>
+    <div class="logo" style="background:url('/themes/<%- page.theme %>/public/images/logo.png?v=<%- page.ver %>') no-repeat 0 0;"><a href="/"></a></div>
     <div class="search">
         <form method="get" action="/<%- page.urls.search %>" class="search_header">
             <div class="search-wrap icon-search">
@@ -71,7 +71,7 @@
 
     <div class="randomMovieMenu">
         <div class="login guest cinemapress-random-menu" title="<%- page.l.lucky %>">
-            <a href="/?random"><img src="/themes/robb/public/images/dice.svg" alt="<%- page.l.lucky %>"></a>
+            <a href="/?random"><img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.lucky %>"></a>
         </div>
     </div>
 
