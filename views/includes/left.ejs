@@ -53,7 +53,7 @@
         <div class="list-item">
             <a href="<%- movie.url %>" class="name-movie">
                 <span class="name-rus"><%= movie.title %></span>
-                <span class="name-eng"><% if (movie.season && movie.episode) { %>(<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></span>
+                <span class="name-eng"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %><% } %></span>
             </a>
         </div>
 
