@@ -63,10 +63,11 @@
         </div>
         <div class="now-playing-list main-page">
 
+            <% var moreEpisodes = false; %>
             <% if (category.movies.length) {
             category.movies.forEach(function (movie) { %>
 
-                <div class="list-item">
+                <div class="list-item" <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
                     <a href="<%- movie.url %>" class="name-movie">
                         <span class="name-rus"><%= movie.title %></span>
                         <span class="name-eng"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %><% } %></span>
@@ -77,6 +78,10 @@
             } %>
 
         </div>
+
+        <% if (moreEpisodes) { %>
+            <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+        <% } %>
 
     <% }); } } } %>
 
