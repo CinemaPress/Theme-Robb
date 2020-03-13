@@ -1,9 +1,12 @@
 <div class="container">
-    <div class="logo" style="background:url('/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>') no-repeat 0 0;background-size: contain;"><a href="/"></a></div>
+    <div class="logo"
+         style="background:url('/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>') no-repeat 0 0;background-size: contain;">
+        <a href="/"></a></div>
     <div class="search">
         <form method="get" action="/<%- page.urls.search %>" class="search_header">
             <div class="search-wrap icon-search">
-                <input type="text" name="q" id="search" placeholder="<%- page.l.movieTitle %>" data-autocomplete="desktop">
+                <input type="text" name="q" id="search" placeholder="<%- page.l.movieTitle %>"
+                       data-autocomplete="desktop">
                 <input class="f_submited" type="submit" value="">
                 <span class="close-search icon-close"></span>
             </div>
@@ -22,7 +25,7 @@
                     <li><a href="/<%- page.urls.director %>"><%- page.l.allDirectors %></a></li>
                 </ul>
                 <ul class="sub-main-nav">
-                    <% page.urls.genres.slice(0,10).forEach(function(genre) { %>
+                    <% page.urls.genres.slice(0, 10).forEach(function(genre) { %>
                         <li>
                             <a href="<%- genre.url %>">
                                 <%- genre.title %>
@@ -31,7 +34,7 @@
                     <% }); %>
                 </ul>
                 <ul class="sub-main-nav">
-                    <% page.urls.genres.slice(10,20).forEach(function(genre) { %>
+                    <% page.urls.genres.slice(10, 20).forEach(function(genre) { %>
                         <li>
                             <a href="<%- genre.url %>">
                                 <%- genre.title %>
@@ -40,7 +43,7 @@
                     <% }); %>
                 </ul>
                 <ul class="sub-main-nav">
-                    <% page.urls.genres.slice(20,30).forEach(function(genre) { %>
+                    <% page.urls.genres.slice(20, 30).forEach(function(genre) { %>
                         <li>
                             <a href="<%- genre.url %>">
                                 <%- genre.title %>
@@ -49,7 +52,7 @@
                     <% }); %>
                 </ul>
                 <ul class="sub-main-nav">
-                    <% page.urls.years.slice(0,10).forEach(function(year) { %>
+                    <% page.urls.years.slice(0, 10).forEach(function(year) { %>
                         <li>
                             <a href="<%- year.url %>">
                                 <%- year.title %>
@@ -66,12 +69,14 @@
     </ul>
 
     <div class="login guest">
-        <span class="open icon-play continueViewingBlock" id="continueViewing" style="display: none;"><%- page.l.continue %></span>
+        <span class="open icon-play continueViewingBlock" id="continueViewing"
+              style="display: none;"><%- page.l.continue %></span>
     </div>
 
     <div class="randomMovieMenu">
         <div class="login guest cinemapress-random-menu" title="<%= page.l.lucky %>">
-            <a href="/?random=<%- Math.random() %>"><img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.lucky %>"></a>
+            <a href="/?random=<%- Math.random() %>"><img src="/themes/<%- page.theme %>/public/images/dice.svg"
+                                                         alt="<%= page.l.lucky %>"></a>
         </div>
     </div>
 

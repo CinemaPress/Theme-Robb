@@ -10,7 +10,8 @@
             <% [top.shift()].forEach(function (movie) { %>
 
                 <div id="now-playing" class="slider slider-main">
-                    <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="<%= page.l.online %> <%= movie.title %>"></a>
+                    <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>"
+                                                                            alt="<%= page.l.online %> <%= movie.title %>"></a>
                 </div>
 
             <% }); %>
@@ -47,13 +48,17 @@
             [category.movies.shift()].forEach(function (movie) { %>
 
                 <div id="now-playing" class="slider slider-main">
-                    <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="<%= page.l.online %> <%= movie.title %>"></a>
+                    <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>"
+                                                                            alt="<%= page.l.online %> <%= movie.title %>"></a>
                 </div>
 
                 <div class="list-item">
                     <a href="<%- movie.url %>" class="name-movie">
                         <span class="name-rus"><%= movie.title %></span>
-                        <span class="name-eng"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %><% } %></span>
+                        <span class="name-eng">
+                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>
+                            <% } %>
+                        </span>
                     </a>
                 </div>
 
@@ -67,10 +72,16 @@
             <% if (category.movies.length) {
             category.movies.forEach(function (movie) { %>
 
-                <div class="list-item" <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
+                <div class="list-item" <% if (movie.hide) { moreEpisodes = true; %>style="display:none"
+                     data-more-episodes="hide"
+                        <% } %>
+                >
                     <a href="<%- movie.url %>" class="name-movie">
                         <span class="name-rus"><%= movie.title %></span>
-                        <span class="name-eng"><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %><% } %></span>
+                        <span class="name-eng">
+                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>
+                            <% } %>
+                        </span>
                     </a>
                 </div>
 
@@ -80,7 +91,8 @@
         </div>
 
         <% if (moreEpisodes) { %>
-            <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+            <div class="moreEpisodes"
+                 onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
         <% } %>
 
     <% }); } } } %>
@@ -94,7 +106,7 @@
         <div class="list-item">
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=kinopoisk-vote-up" class="name-movie">
                 <span class="name-rus">
-                    <%- page.l.popular %> <%- page.l.movie %>
+                    <%- page.l.popular %> <%- page.l.movies %>
                 </span>
                 <span class="name-eng">
                     <%- page.l.popular %> <%- page.l.kp %>
@@ -134,7 +146,7 @@
         <div class="list-item">
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=kinopoisk-rating-up" class="name-movie">
                 <span class="name-rus">
-                    <%- page.l.top %> <%- page.l.movie %>
+                    <%- page.l.top %> <%- page.l.movies %>
                 </span>
                 <span class="name-eng">
                     <%- page.l.rating %> <%- page.l.kp %>
@@ -175,7 +187,7 @@
         <div class="list-item">
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=imdb-vote-up" class="name-movie">
                 <span class="name-rus">
-                    <%- page.l.popular %> <%- page.l.movie %>
+                    <%- page.l.popular %> <%- page.l.movies %>
                 </span>
                 <span class="name-eng">
                     <%- page.l.popular %> <%- page.l.imdb %>
@@ -215,7 +227,7 @@
         <div class="list-item">
             <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sort=imdb-rating-up" class="name-movie">
                 <span class="name-rus">
-                    <%- page.l.top %> <%- page.l.movie %>
+                    <%- page.l.top %> <%- page.l.movies %>
                 </span>
                 <span class="name-eng">
                     <%- page.l.rating %> <%- page.l.imdb %>
@@ -268,7 +280,8 @@
                         <% soon.forEach(function (movie) { %>
 
                             <li class="slider-item">
-                                <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>" alt="<%= page.l.online %> <%= movie.title %>"></a>
+                                <a href="<%- movie.url %>" class="playing-poster "><img src="<%- movie.poster %>"
+                                                                                        alt="<%= page.l.online %> <%= movie.title %>"></a>
                                 <div class="comming-soon-name">
                                     <a href="<%- movie.url %>" class="name-movie">
                                         <span class="name-rus" style="white-space:normal;"><%= movie.title %></span>
@@ -291,7 +304,8 @@
         <% news.forEach(function (content) { %>
             <div style="float: left; width: 100%;">
                 <div style="margin: 0; padding: 10px">
-                    <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                    <a href="<%- content.url %>" class="cinemapress-news"
+                       style="background-image:url('<%- content.image %>');">
                         <div class="cinemapress-news-title">
                             <%= content.title %>
                         </div>
@@ -324,11 +338,14 @@
                             <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
                                 <div class="cinemapress-comment-user-name">
                                     <%- comment.user %>
-                                </div><div class="cinemapress-comment-user-said">
+                                </div>
+                                <div class="cinemapress-comment-user-said">
                                     <%- page.l.said %>
-                                </div><div class="cinemapress-comment-user-date">
+                                </div>
+                                <div class="cinemapress-comment-user-date">
                                     <%- comment.date %>
-                                </div><div class="cinemapress-comment-user-link">
+                                </div>
+                                <div class="cinemapress-comment-user-link">
                                     <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
                                 </div>
                             </div>
