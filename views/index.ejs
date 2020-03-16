@@ -71,12 +71,7 @@
                                             </div>
                                         </a>
                                         <a href="<%- movie.url %>">
-                                            <h3 class="name"><%= movie.title %>
-                                                <% if (movie.season && movie.episode) { %>
-                                                    (<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>
-                                                    )
-                                                <% } %>
-                                            </h3>
+                                            <h3 class="name"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></h3>
                                             <div class="origin-name"><%= movie.title_en %></div>
                                         </a>
                                         <a href="<%- movie.url %>" class="watch">
@@ -93,12 +88,7 @@
                                         <% } %>
                                         <div class="name-block">
                                             <h3 class="name">
-                                                <a href="<%- movie.url %>"><%= movie.title %>
-                                                    <% if (movie.season && movie.episode) { %>
-                                                        (<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>
-                                                        )
-                                                    <% } %>
-                                                </a>
+                                                <a href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %>(<%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>)<% } %></a>
                                             </h3>
                                             <div class="origin-name"><%= movie.title_en %></div>
                                         </div>
