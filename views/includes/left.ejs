@@ -44,7 +44,7 @@
                 <%- category.name %>
             </div>
 
-            <% if (category.movies.length) {
+            <% if (typeof category === 'object' && category.movies && category.movies.length) {
             [category.movies.shift()].forEach(function (movie) { %>
 
                 <div id="now-playing" class="slider slider-main">
@@ -69,7 +69,7 @@
         <div class="now-playing-list main-page">
 
             <% var moreEpisodes = false; %>
-            <% if (category.movies.length) {
+            <% if (typeof category === 'object' && category.movies && category.movies.length) {
             category.movies.forEach(function (movie) { %>
 
                 <div class="list-item" <% if (movie.hide) { moreEpisodes = true; %>style="display:none"

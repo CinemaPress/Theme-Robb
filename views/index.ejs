@@ -56,7 +56,7 @@
                             </h2>
                         </div>
                         <div class="cinemapress-content-main">
-                            <% if (category.movies.length) {
+                            <% if (typeof category === 'object' && category.movies && category.movies.length) {
                             category.movies.forEach(function (movie) { %>
                                 <article class="shortstory line">
                                     <div class="short">

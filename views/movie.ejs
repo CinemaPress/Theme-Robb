@@ -349,7 +349,7 @@
                                 </div>
                                 <div class="viewport">
                                     <ul class="slider-wrap overview">
-                                        <% if (category.movies.length) {
+                                        <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                         category.movies.forEach(function (movie) { %>
                                             <li class="slider-item">
                                                 <a href="<%- movie.url %>">
