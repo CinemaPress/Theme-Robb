@@ -66,7 +66,7 @@
                                     <div class="short">
                                         <a href="<%- movie.url %>">
                                             <div class="like-count-wrap">
-                                                <img src="<%- movie.poster %>" class="poster" alt="<%= movie.title %>">
+                                                <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" class="poster" alt="<%= movie.title %>">
                                                 <% if (movie.quality) { %>
                                                     <div class="like">
                                                         <div class="count green"><%- movie.quality %></div>
