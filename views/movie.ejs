@@ -32,7 +32,7 @@
                                 <li>
                                     <a href="<%- movie.url %>">
                                 <span class="icon-noimage">
-                                    <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" class="film-poster"
+                                    <img src="<%- movie.poster_min %>" data-src="<%- movie.poster %>" class="lazy film-poster"
                                          alt="<%= page.l.online %> <%= movie.title %>">
                                 </span>
                                         <i class="fa ico-play"></i>
@@ -115,7 +115,7 @@
                         <article class="fullstory">
                             <div class="short min">
                                 <span>
-                                    <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" class="poster" alt="<%= page.title %>"
+                                    <img src="<%- movie.poster_min %>" data-src="<%- movie.poster %>" class="lazy poster" alt="<%= page.title %>"
                                          title="<%= page.title %>" data-cinemapress-poster="<%- movie.poster %>">
                                 </span>
                                 <% if (page.urls.movies.online) { %>
@@ -135,7 +135,7 @@
                                     <div class="trailer-wrap">
                                         <span class="trailer-title"><%- page.l.trailer %>:</span>
                                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
-                                            <div class="trailer-img icon-playSlim" style="background: url('<%- movie.picture_min %>') 100% 100% no-repeat; background-size: cover;" data-cinemapress-bg-src="<%- movie.picture %>"></div>
+                                            <div class="lazy trailer-img icon-playSlim" style="background: url('<%- movie.picture_min %>') 100% 100% no-repeat; background-size: cover;" data-bg="<%- movie.picture %>"></div>
                                             <div class="trailer-video"></div>
                                         </a>
                                     </div>
@@ -357,7 +357,7 @@
                                             <li class="slider-item">
                                                 <a href="<%- movie.url %>">
                                             <span class="slider-img ">
-                                                <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" class="film-poster"
+                                                <img src="<%- movie.poster_min %>" data-src="<%- movie.poster %>" class="lazy film-poster"
                                                      alt="<%= page.l.online %> <%= movie.title %>">
                                             </span>
                                                     <div class="film-name"><%= movie.title %></div>
