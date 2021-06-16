@@ -1,10 +1,10 @@
 # Theme «robb»
 
-![Theme «robb» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Robb/master/screenshot.png "Theme «robb» for CinemaPress")
+![Theme «robb» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Robb/master/screenshot.png)
 
 :art: Theme «robb» for CinemaPress
 
-- [Robb.CinemaPress.io](http://Robb.CinemaPress.io/)
+- `«robb»`
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Robb/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Robb/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-robb/get/master.zip)
